@@ -19,7 +19,11 @@
         <input type="file" name="IMAGE" accept="image/*">
         <input type="text" name="tempat_lahir" value="<?php echo htmlspecialchars($user['tempat_lahir']); ?>" placeholder="Tempat Lahir" required>
         <input type="date" name="tanggal_lahir" placeholder="tanggal lahir">
-        <input type="text" name="ROLE" value="<?php echo htmlspecialchars($user['ROLE']); ?>">
+        <select name="ROLE">
+            <option value="admin_jurusan" <?php echo $user['ROLE'] == 'admin_jurusan' ? 'selected' : ''; ?>>Admin Jurusan</option>
+            <option value="admin_prodi" <?php echo $user['ROLE'] == 'admin_prodi' ? 'selected' : ''; ?>>Admin Prodi</option>
+            <option value="mahasiswa" <?php echo $user['ROLE'] == 'mahasiswa' ? 'selected' : ''; ?>>Mahasiswa</option>
+        </select>
         <button type="submit">Update User</button>
     </form>
 </body>
