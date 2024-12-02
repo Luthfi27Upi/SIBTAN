@@ -5,17 +5,16 @@ class Database {
     
     private function __construct() {
       
-        $serverName = "MSI\SQLEXPRESS";
+        $serverName = "LAPTOP-69O5OEH3\SQLEXPRESS";
         $connectionOptions = [
-            "Database" => "PBL_V2",
+            "Database" => "SIBTAN",
             
-            "Uid" => "",
-            "PWD" => "",
+            "Uid" => "sa",
+            "PWD" => "12345",
            
             "TrustServerCertificate" => true,
             "Encrypt" => false
         ];
-        
         
         try {
             $this->connection = sqlsrv_connect($serverName, $connectionOptions);
