@@ -3,16 +3,15 @@ session_start();
 define('BASE_PATH', __DIR__);
 
 require_once BASE_PATH . '/config/database.php';
-require_once BASE_PATH . '/models/Auth.php';
-require_once BASE_PATH . '/controllers/AuthController.php';
-require_once BASE_PATH . '/controllers/PasswordResetController.php';
-require_once BASE_PATH . '/controllers/UserController.php';
-require_once BASE_PATH . '/models/User.php';
+require_once BASE_PATH . '/app/Models/Auth.php';
+require_once BASE_PATH . '/app/Controllers/AuthController.php';
+require_once BASE_PATH . '/app/Controllers/PasswordResetController.php';
+require_once BASE_PATH . '/app/Controllers/UserController.php';
+require_once BASE_PATH . '/app/Models/User.php';
 
 $db = Database::getInstance()->getConnection();
 $authModel = new Auth($db);
 $userModel = new User($db);
-
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
