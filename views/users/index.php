@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>User List</h1>
-    <a href="/users/create">Create New User</a>
+    <a href="users/create">Create New User</a>
     <table>
         <tr>
             <th>Username</th>
@@ -23,9 +23,9 @@
                 <td><?php echo htmlspecialchars($user['USERNAME']); ?></td>
                 <td><?php echo htmlspecialchars($user['EMAIL']); ?></td>
                 <td>
-                    <a href="/users/read/<?php echo $user['ID']; ?>">View</a>
-                    <a href="/users/update/<?php echo $user['ID']; ?>">Edit</a>
-                    <a href="/users/delete/<?php echo $user['ID']; ?>">Delete</a>
+                    <a href="users/read/<?php echo $user['ID']; ?>">View</a>
+                    <a href="users/update/<?php echo $user['ID']; ?>">Edit</a>
+                    <a href="users/delete/<?php echo $user['ID']; ?>">Delete</a>
                 </td>
             </tr>
             <?php endforeach; ?>

@@ -5,8 +5,17 @@ class AuthController {
     public function __construct(Auth $auth) {
         $this->auth = $auth;
     }
-    
+
     public function login() {
+        include "views/login.php";
+    }
+
+    public function otp() {
+        include "views/auth/otp.php";
+    }
+    
+    public function actionlogin() {
+        
         $nim = $_POST['nim'];
         $password = $_POST['password'];
         
@@ -40,6 +49,7 @@ class AuthController {
             ]);
         }
     }
+
     public function verifyOTP() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $inputOTP = $_POST['otp'];
@@ -94,7 +104,7 @@ class AuthController {
     }
     
     public function logout() {
-        session_destroy();
-        header('Location: /login');
+        //session_destroy();
+        //header('Location: /login');
     }
 }
