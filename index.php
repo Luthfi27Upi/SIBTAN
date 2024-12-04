@@ -32,6 +32,15 @@ switch ($path) {
         $controller = new AuthController($authModel);
         echo $controller->login();
         break;
+
+    case '/actionlogin':
+        $controller = new AuthController($authModel);
+        echo $controller->actionlogin();
+        break;
+
+    case '/auth/otp':
+        $controller = new AuthController($authModel);
+        echo $controller->otp();
         
     case '/logout':
         $controller = new AuthController($authModel);
