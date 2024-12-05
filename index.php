@@ -15,8 +15,12 @@ $userModel = new User($db);
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-$path = rtrim($request_uri, '/');
+$base_prefix = '/SIBTAN';
+if (strpos($request_uri, $base_prefix) === 0) {
+    $request_uri = substr($request_uri, strlen($base_prefix));
+}
 
+$path = rtrim($request_uri, '/');
 $path = preg_replace('/:\d+/', '', $path);
 $segments = explode('/', $path);
 $id = isset($segments[3]) ? $segments[3] : null;
@@ -28,6 +32,15 @@ switch ($path) {
         $controller = new AuthController($authModel);
         echo $controller->login();
         break;
+
+    case '/actionlogin':
+        $controller = new AuthController($authModel);
+        echo $controller->actionlogin();
+        break;
+
+    case '/auth/otp':
+        $controller = new AuthController($authModel);
+        echo $controller->otp();
         
     case '/logout':
         $controller = new AuthController($authModel);

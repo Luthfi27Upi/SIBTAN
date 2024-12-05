@@ -18,7 +18,11 @@
             <option value="1">Male</option>
             <option value="0">Female</option>
         </select>
-        <input type="text" name="ROLE" placeholder="Role">
+        <select name="ROLE">
+            <option value="admin_jurusan">Admin Jurusan</option>
+            <option value="admin_prodi">Admin Prodi</option>
+            <option value="mahasiswa">Mahasiswa</option>
+        </select>
         <input type="file" name="IMAGE" accept="image/*">
         <input type="text" name="tempat_lahir" placeholder="tempat lahir">
         <input type="date" name="tanggal_lahir" placeholder="tanggal lahir">
