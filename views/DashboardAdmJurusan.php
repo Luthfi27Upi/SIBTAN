@@ -98,11 +98,10 @@
     font-size: 1.5rem; /* Ukuran font lebih besar */
     font-weight: 500; /* Tebal sedang */
   }
-    
 
-
-  </style>
+</style>
 </head>
+
 <body class="d-flex flex-column min-vh-100">
   <div class="d-flex flex-grow-1">
     <!-- Sidebar -->
@@ -112,11 +111,11 @@
         <h5>SiBTAN</h5>
       </div>
       <ul class="nav flex-column px-2">
-      <li class="nav-item my-2"><a href="#" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-        <li class="nav-item"><a href="#" class="nav-link ">Tata Cara</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Dataku</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Info Data</a></li>
+        <li class="nav-item my-2"><a href="DashboardAdmJurusan.php" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="ProfileAdmJurusan.php" class="nav-link">Profile</a></li>
+        <li class="nav-item"><a href="TataCaraAdmJurusan.php" class="nav-link active">Tata Cara</a></li>
+        <li class="nav-item"><a href="DatakuAdmJurusan.php" class="nav-link">Dataku</a></li>
+        <li class="nav-item"><a href="InfoAdmJurusan.php" class="nav-link">Info Data</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Call Center</a></li>
       </ul>
@@ -138,7 +137,7 @@
         </div>
         <section class="info-section text-center">
           <h4 style="color:#043873; margin-left: 200px;" >Profil Sistem Bebas Tanggungan</h4>
-          <p style="color:#043873; font-size: 14px; margin-left: 200px;">
+          <p style="color:#043873; font-size: 14px; margin-left: 200px;" img src="img/ElementDashboard.png">
             Sistem "bebas tanggungan" adalah istilah yang biasanya merujuk pada suatu bentuk sistem
             yang tidak menuntut adanya tanggung jawab atau kewajiban yang berkelanjutan dari pihak tertentu.
             Dalam konteks administrasi, keuangan, atau hukum, sistem bebas tanggungan berarti bahwa pihak-pihak
