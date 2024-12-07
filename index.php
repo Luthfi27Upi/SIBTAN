@@ -7,11 +7,14 @@ require_once BASE_PATH . '/app/Models/Auth.php';
 require_once BASE_PATH . '/app/Controllers/AuthController.php';
 require_once BASE_PATH . '/app/Controllers/PasswordResetController.php';
 require_once BASE_PATH . '/app/Controllers/UserController.php';
+require_once BASE_PATH . '/app/Controllers/FormController.php';
 require_once BASE_PATH . '/app/Models/User.php';
+require_once BASE_PATH . '/app/Models/Form.php';
 
 $db = Database::getInstance()->getConnection();
 $authModel = new Auth($db);
 $userModel = new User($db);
+$formModel = new Form($db);
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -90,6 +93,16 @@ switch ($path) {
     case '/users/delete/'. $id:
         $controller = new UserController($userModel);
         $controller->delete($id); 
+        break;
+
+    case '/users/dataku':
+        $controller = new FormController($formModel);
+        $controller->renderCards(); 
+        break;
+
+    case '/users/actionupload':
+        $controller = new FormController($formModel);
+        echo $controller->create();
         break;
         
     default:
