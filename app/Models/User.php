@@ -28,8 +28,8 @@ class User {
         return sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
     }
 
-    // Update user information
-    public function update($id, $username, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir, $tanggal_lahir, $image = null) {
+
+    public function update($id, $username, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir, $tanggal_lahir,$image) {
         $sql = "UPDATE [USER] SET username = ?, email = ?, no_hp = ?, nim = ?, alamat = ?, jenis_kelamin = ?, role = ?, tempat_lahir = ?, tanggal_lahir = ?";
         if ($image) {
             $sql .= ", image = ?";
