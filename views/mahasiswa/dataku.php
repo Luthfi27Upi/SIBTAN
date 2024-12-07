@@ -165,8 +165,23 @@
             <div class="card-hover">
                 <p><?= $card['label'] ?></p>
                 <small>File format: PDF</small>
-                <button class="btn btn-primary">Browse</button>
+                <button class="btn btn-primary"  id="uploadButton-<?= $card['label'] ?>">Browse</button>
             </div>
+            <form id="uploadForm-<?= $card['label'] ?>-reupload" action="actionupload" method="POST" enctype="multipart/form-data" style="display: none;">
+              <input type="hidden" name="label" value="<?= $card['fileName'] ?>">
+              <input type="file" name="uploaded_file" id="fileInput-<?= $card['label'] ?>-reupload" accept="application/pdf">
+            </form>
+            <script>
+              document.getElementById('uploadButton-<?= $card['label'] ?>').addEventListener('click', function () {
+                  const fileInput = document.getElementById('fileInput-<?= $card['label'] ?>-reupload');
+                  fileInput.click();
+              });
+
+              document.getElementById('fileInput-<?= $card['label'] ?>-reupload').addEventListener('change', function () {
+                  const uploadForm = document.getElementById('uploadForm-<?= $card['label'] ?>-reupload');
+                  uploadForm.submit();
+              });
+              </script>
             <?php elseif ($card['status'] === 'ACC'): ?>
               <div class="card-content">
                 <i class="icon fas fa-file-alt"></i>

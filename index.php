@@ -104,7 +104,14 @@ switch ($path) {
         $controller = new FormController($formModel);
         echo $controller->create();
         break;
-        
+    case '/actionVerify':
+        $controller = new FormController($formModel);
+        echo $controller->renderAdminVerification();
+        break;
+    case '/verif':
+        $controller = new FormController($formModel);
+        echo $controller->verifyForm();
+        break;
     default:
         header("HTTP/1.0 404 Not Found");
         echo "404 Not Found - Path: " . $path;
