@@ -7,7 +7,7 @@ class AuthController {
     }
 
     public function login() {
-        include "views/login.php";
+        include "views/auth/login.php";
     }
 
     public function otp() {

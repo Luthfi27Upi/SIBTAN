@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <title>Verifikasi OTP</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../resources/css/otp.css">
 </head>
 <body>
-    <form method="POST" action="/verifyOTP">
-        <label for="otp">Masukkan kode OTP:</label>
-        <input type="text" name="otp" id="otp" maxlength="6">
-        <br>
-        <button type="submit">Verifikasi</button>
-    </form>
+  <div class="otp-container">
+    <div class="otp-box">
+      <div class="otp-content">
+        <div class="otp-form">
+          <div class="info">
+            You have received the OTP code in your email.
+          </div>
+          <h1>Enter OTP Code</h1>
+          <form method="POST" action="/verifyOTP">
+            <div class="input-container">
+              <input type="text" name="otp" id="otp" maxlength="6" placeholder="Enter your OTP" required>
+            </div>
+            <button type="submit" class="verify-button">Verify OTP</button>
+          </form>
+        </div>
+        <div class="otp-image">
+          <img src="img/building.jpg" alt="Campus Building">
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 <script>
     $(function() {
@@ -37,7 +53,7 @@
                             alert('Error: ' + jsonResponse.message);
                         } else if (jsonResponse.status === "success") {
                             var userRole = jsonResponse.role; 
-                            if (userRole === 'admin') {
+                            if (userRole === 'admin_jurusan') {
                                 window.location.href = '../dashboardAdminJurusan.php'; 
                             } else if (userRole === 'admin_prodi') {
                                 window.location.href = '../dashboardAdminProdi.php'; 
