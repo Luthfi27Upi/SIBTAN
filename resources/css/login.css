@@ -25,6 +25,12 @@ body {
     display: flex;
     width: 100%;
   }
+
+  .header {
+    display: flex;
+    align-items: center;
+    
+  }
   
   .login-form {
     padding: 30px;
@@ -32,21 +38,25 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 30px;
+    
   }
   
   .logo {
-    width: 50px;
-    margin-bottom: 20px;
+    width: 180px; 
+    height: 150px;
+    margin-bottom: 10px; 
   }
   
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
+    font-weight: 900;
     color: #0c326f;
-    margin-bottom: 20px;
+     display: inline-block;
   }
   
   .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   
   label {
@@ -62,12 +72,7 @@ body {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  .toggle-password {
-    position: absolute;
-    margin-left: -30px;
-    cursor: pointer;
+    box-sizing: border-box;
   }
   
   .login-button {
@@ -95,4 +100,19 @@ body {
     height: 100%;
     object-fit: cover;
   }
-  
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #666;
+}
+
