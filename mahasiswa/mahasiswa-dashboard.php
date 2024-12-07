@@ -82,7 +82,7 @@
     }
 
     .hero-section {
-      background: url('../../resources/img/RuanganDashboard.png') center/cover no-repeat;
+      background: url('img/RuanganDashboard.png') center/cover no-repeat;
       padding: 100px 20px;
       border-radius: 30px;
       margin-left: 200px;
@@ -110,31 +110,17 @@
     <!-- Sidebar -->
     <nav class="sidebar">
       <div class="text-center py-4">
-        <img src="../../resources/img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
+        <img src="img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
         <h5>SiBTAN</h5>
       </div>
       <ul class="nav flex-column px-2">
-        <li class="nav-item my-2">
-          <a href="home.php" class="nav-link <?php echo $current_page == 'home.php' ? 'active' : ''; ?>">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="profile.php" class="nav-link <?php echo $current_page == 'profile.php' ? 'active' : ''; ?>">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a href="tatacara.php" class="nav-link <?php echo $current_page == 'tatacara.php' ? 'active' : ''; ?>">Tata Cara</a>
-        </li>
-        <li class="nav-item">
-          <a href="dataku.php" class="nav-link <?php echo $current_page == 'dataku.php' ? 'active' : ''; ?>">Dataku</a>
-        </li>
-        <li class="nav-item">
-          <a href="infodata.php" class="nav-link <?php echo $current_page == 'infodata.php' ? 'active' : ''; ?>">Info Data</a>
-        </li>
-        <li class="nav-item">
-          <a href="logout.php" class="nav-link <?php echo $current_page == 'logout.php' ? 'active' : ''; ?>">Logout</a>
-        </li>
-        <li class="nav-item">
-          <a href="callcenter.php" class="nav-link <?php echo $current_page == 'callcenter.php' ? 'active' : ''; ?>">Call Center</a>
-        </li>
+      <li class="nav-item my-2"><a href="#" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+        <li class="nav-item"><a href="#" class="nav-link ">Tata Cara</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Dataku</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Info Data</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Call Center</a></li>
       </ul>
       <div class="sidebar-footer">
         © 2024 SiBTAN JTI Polinema.
@@ -150,7 +136,7 @@
         <div class="hero-section text-center mb-4">
           <h2 style="color:#FFE492; text-align:center;" >Sistem Bebas Tanggungan</h2>
           <p style="color:#FFE492">Jurusan Teknologi Informasi</p>
-          <!--<img src="RuanganDashboard.png" class="img-fluid rounded mx-auto d-block background-cover-img" style="max-width: 600px;" alt="Ruangan Dashboard">-->
+          <!--<img src="img/RuanganDashboard.png" class="img-fluid rounded mx-auto d-block background-cover-img" style="max-width: 600px;" alt="Ruangan Dashboard">-->
         </div>
         <section class="info-section text-center">
           <h4 style="color:#043873; margin-left: 200px;" >Profil Sistem Bebas Tanggungan</h4>
@@ -165,11 +151,7 @@
     </div>
   </div>
 
-  <script>
-    $(document).ready(function() {
-      $("#sidebar-container").load("sidebar.html");
-    });
-  </script>
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
