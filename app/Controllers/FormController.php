@@ -57,5 +57,27 @@ class FormController
             echo "No file submitted.";
         }
     }
+    public function renderAdminVerification() {
+        
+        $filesToVerify = $this->formModel->verificationPending();
 
+        require 'views/admin/verification.php'; 
+    }
+    public function verifyForm() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $userId = $_POST['userId'];
+            $fileName = $_POST['fileName'];
+            $action = $_POST['action'];
+    
+            if ($action === 'approve') {
+                $this->formModel->updateStatus($userId, $fileName, "ACC");
+            } elseif ($action === 'decline') {
+                $this->formModel->updateStatus($userId, $fileName, "Ditolak");
+            }
+    
+            
+            header('Location: /actionVerify'); 
+            exit();
+        }
+    }
 }

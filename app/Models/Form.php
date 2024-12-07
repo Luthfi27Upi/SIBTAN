@@ -51,5 +51,33 @@ class Form {
             return $result ? $result['file_path'] : null;
         }
     }
+    public function updateStatus($userId, $file_name, $newStatus) {
+        $sql = "UPDATE FILES SET status = ? WHERE id = ? AND file_name = ?";
+        $params = [$newStatus, $userId, $file_name];
+        
+        $stmt = sqlsrv_query($this->db, $sql, $params);
+        
+        if ($stmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
     
+        return true; 
+    }
+    public function verificationPending() {
+        $sql = "SELECT * FROM FILES WHERE status = 'Menunggu Verifikasi'";
+        $stmt = sqlsrv_query($this->db, $sql);
+
+        if ($stmt === false) {
+            die(print_r(sqlsrv_errors(), true)); 
+        }
+
+        $filesToVerify = [];
+        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+            $filesToVerify[] = $row; 
+        }
+
+        return $filesToVerify; 
+    }
 }
+    
+    
