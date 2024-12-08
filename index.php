@@ -15,7 +15,7 @@ $userModel = new User($db);
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-$base_prefix = '/SIBTAN';
+$base_prefix = '';
 if (strpos($request_uri, $base_prefix) === 0) {
     $request_uri = substr($request_uri, strlen($base_prefix));
 }
