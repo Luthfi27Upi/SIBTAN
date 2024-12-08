@@ -29,7 +29,7 @@
                 </td>
             </tr>
             <?php endforeach; ?>
-        <?php else: ?>
+        <?php else: ?>  
             <tr>
                 <td colspan="3">No users found.</td>
             </tr>

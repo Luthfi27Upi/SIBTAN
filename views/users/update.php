@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Update User</h1>
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
         <input type="text" name="USERNAME" value="<?php echo htmlspecialchars($user['USERNAME']); ?>" required>
         <input type="email" name="EMAIL" value="<?php echo htmlspecialchars($user['EMAIL']); ?>" required>
         <input type="text" name="NO_HP" value="<?php echo htmlspecialchars($user['NO_HP']); ?>">
@@ -18,7 +18,7 @@
         </select>
         <input type="file" name="IMAGE" accept="image/*">
         <input type="text" name="tempat_lahir" value="<?php echo htmlspecialchars($user['tempat_lahir']); ?>" placeholder="Tempat Lahir" required>
-        <input type="date" name="tanggal_lahir" placeholder="tanggal lahir">
+        <input type="date" name="tanggal_lahir" placeholder="tanggal lahir" required>
         <select name="ROLE">
             <option value="admin_jurusan" <?php echo $user['ROLE'] == 'admin_jurusan' ? 'selected' : ''; ?>>Admin Jurusan</option>
             <option value="admin_prodi" <?php echo $user['ROLE'] == 'admin_prodi' ? 'selected' : ''; ?>>Admin Prodi</option>
