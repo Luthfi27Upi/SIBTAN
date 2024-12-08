@@ -26,6 +26,7 @@
         <input type="file" name="IMAGE" accept="image/*">
         <input type="text" name="tempat_lahir" placeholder="tempat lahir">
         <input type="date" name="tanggal_lahir" placeholder="tanggal lahir">
+        <input type="text" name="jurusan" placeholder="jurusan">
         <button type="submit">Create User</button>
     </form>
 </body>

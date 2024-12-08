@@ -57,9 +57,9 @@ class FormController
             echo "No file submitted.";
         }
     }
-    public function renderAdminVerification() {
+    public function renderAdminVerification($id) {
         
-        $filesToVerify = $this->formModel->verificationPending();
+        $filesToVerify = $this->formModel->verificationPending($id);
 
         require 'views/admin/verification.php'; 
     }
@@ -76,8 +76,9 @@ class FormController
             }
     
             
-            header('Location: /actionVerify'); 
+            header('Location: views/admin/verification.php'); 
             exit();
         }
     }
+    
 }
