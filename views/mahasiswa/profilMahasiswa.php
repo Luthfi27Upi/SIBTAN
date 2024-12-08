@@ -124,7 +124,7 @@
     <!-- Sidebar -->
     <nav class="sidebar">
       <div class="text-center py-4">
-        <img src="../img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
+        <img src="../../resources/img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
         <h5>SiBTAN</h5>
       </div>
       <ul class="nav flex-column px-2">
@@ -204,7 +204,7 @@
             <!-- Profile Section -->
             <div class="col-md-4 ms-5"style="margin-top: -95px;">
               <div class="bg-primary">
-                <img src="../img/logouser.jpg" alt="User Avatar" class="rounded-circle mb-6">
+                <img src="../../resources/img/logouser.jpg" alt="User Avatar" class="rounded-circle mb-6">
                   <div class="identitas ">
                   <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">Lutfi Triaswangsa</span>
                   <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">2341720200</span>
