@@ -63,9 +63,10 @@ class Form {
     
         return true; 
     }
-    public function verificationPending() {
-        $sql = "SELECT * FROM FILES WHERE status = 'Menunggu Verifikasi'";
-        $stmt = sqlsrv_query($this->db, $sql);
+    public function verificationPending($id) {
+        $sql = "SELECT * FROM FILES WHERE status = 'Menunggu Verifikasi' AND id = ?";
+        $params = [$id];
+        $stmt = sqlsrv_query($this->db, $sql, $params);
 
         if ($stmt === false) {
             die(print_r(sqlsrv_errors(), true)); 
