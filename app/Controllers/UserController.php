@@ -19,6 +19,7 @@ class UserController {
             $role = $_POST['ROLE'];
             $tempat_lahir = $_POST['tempat_lahir'];
             $tanggal_lahir = $_POST['tanggal_lahir'];
+            $jurusan = $_POST['jurusan'];
             
             $imagePath = null;
             if (isset($_FILES['IMAGE']) && $_FILES['IMAGE']['error'] == UPLOAD_ERR_OK) {
@@ -30,8 +31,8 @@ class UserController {
                 move_uploaded_file($imageTmpPath, $imagePath);
             }
 
-            $this->userModel->create($id, $username, $password, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir,$tanggal_lahir,$imagePath);
-            header('Location: /users');
+            $this->userModel->create($id, $username, $password, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir,$tanggal_lahir,$imagePath,$jurusan);
+            header('Location: ../users');
             exit;
         }
         require 'views/users/create.php';
@@ -53,17 +54,21 @@ class UserController {
             $role = $_POST['ROLE'];
             $tempat_lahir = $_POST['tempat_lahir'];
             $tanggal_lahir = $_POST['tanggal_lahir'];
+            $jurusan = $_POST['jurusan'];
+    
 
-            $imagePath = null;
+            $user = $this->userModel->find($id);
+            $imagePath = $user['imagePath'];
+    
             if (isset($_FILES['IMAGE']) && $_FILES['IMAGE']['error'] == UPLOAD_ERR_OK) {
                 $imageTmpPath = $_FILES['IMAGE']['tmp_name'];
                 $imageName = $_FILES['IMAGE']['name'];
                 $imagePath = 'uploads/' . basename($imageName); 
-
+    
                 move_uploaded_file($imageTmpPath, $imagePath);
             }
-
-            $this->userModel->update($id, $username, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir, $tanggal_lahir, $imagePath);
+    
+            $this->userModel->update($id, $username, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir, $tanggal_lahir, $imagePath,$jurusan);
             
             header('Location: /users');
             exit;
@@ -71,7 +76,6 @@ class UserController {
         $user = $this->userModel->find($id);
         require 'views/users/update.php';
     }
-
     public function delete($id) {
         $this->userModel->delete($id);
         header('Location: /users');
