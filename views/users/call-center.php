@@ -20,6 +20,7 @@
       overflow-y: auto;
       scrollbar-width: thin;
     }
+    
 
     .sidebar .nav-link {
       color: white;
@@ -102,6 +103,10 @@
       border-radius: 8px;
     }
 
+    .info-section h4 {
+      color: #2B74C4;
+      margin-bottom: 10px;
+    }
 
     .info-section p {
       color: #043873;
@@ -150,9 +155,9 @@
         <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Tata Cara</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Dataku</a></li>
-        <li class="nav-item"><a href="#" class="nav-link active">Info Data</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Info Data</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Call Center</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active">Call Center</a></li>
       </ul>
       <div class="sidebar-footer">
         © 2024 SiBTAN JTI Polinema.
@@ -169,8 +174,8 @@
 
       <!-- Page Title -->
       <div class="title-with-icon">
-        <img src="../img/logoinfodata.jpg" alt="Call Center" style="width: 40px; height: 40px;">
-        <h1 class="page-title">INFO DATA</h1>
+        <img src="../img/call.png" alt="Call Center" style="width: 40px; height: 40px;">
+        <h1 class="page-title">INFO CALL CENTER</h1>
       </div>
 
       <!-- Info Call Center Section -->
@@ -178,21 +183,9 @@
         <div class="row">
           <div class="col-md-8">
             <div class="info-section">
-            <ol>
-            <li>Berkas yang akan di-upload sudah mendapat ACC dari dosen atau admin terkait.</li>
-            <li>Persiapkan berkas yang akan di-upload dan pastikan sudah benar.</li>
-            <li>Scan file dengan format PDF/PNG dan pastikan gambar sudah jelas.</li>
-            <li>Ukuran file maks 3MB.</li>
-            <li>Pastikan file sudah terunggah dengan sukses.</li>
-            <li>Setelah file sukses terunggah, semua file akan diverifikasi oleh admin. Untuk verifikasi akan membutuhkan sedikit waktu lebih lama.</li>
-            <li>Mohon untuk aktif mengecek website SiBTaN setelah melakukan upload dokumen.</li>
-            <li>Pemberitahuan!</li>
-            <li>Diwajibkan mengunggah foto formal pada masing-masing akun.</li>
-            <li>Diberitahukan kepada seluruh mahasiswa bahwa data syarat untuk pengajuan surat bebas tanggungan dapat diunggah di website SiBTaN adalah daftar kegiatan yang diikuti selama masa studi di Politeknik Negeri Malang.</li>
-            <li>Pertanyaan lebih lanjut dapat menghubungi call center pada website SiBTaN.</li>
-            <li>Untuk upload scan TOEIC dengan skor minimal 450 untuk Diploma 4. Apabila sudah mengikuti 1x tes gratis Polinema dan 1x ujian mandiri berbayar namun nilai masih kurang,
-              maka akan diberikan surat keterangan dari UPA Bahasa (Grapol Lantai 3).</li>
-          </ol>
+              <p>Jika Anda memiliki pertanyaan, Anda dapat menghubungi call center kami di nomor berikut:</p>
+              <p><strong>Telepon:</strong> 0800-123-4567</p>
+              <p><strong>Email:</strong> support@sibtan.ac.id</p>
             </div>
           </div>
 

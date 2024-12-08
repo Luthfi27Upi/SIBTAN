@@ -1,157 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistem Informasi Bebas Tanggungan</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <style>
-    /* Sidebar styling */
-    .sidebar {
-      background: linear-gradient(to bottom, #021a44, #043873, #4fa3ff); 
-      color: white;
-      min-width: 200px;
-      max-width: 200px;
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      height: 100vh;
-      top: 0; /* ensure sidebar is aligned with the top */
-      left: 0;
-      padding-top: 0.10px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEM BEBAS TANGGUNGAN</title>
+    <style>
+        /* Default */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .sidebar .nav-link {
-      color: white;
-      font-weight: 500;
-      padding: 10px 20px;
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex; 
+            flex-direction: column;
+            min-height: 100vh; 
+        }
 
-    .sidebar .nav-link.active, .sidebar .nav-link:hover{
-      background-color: #FFE492; 
-      color: white;
-      padding: 3px 6px;
-      border-radius: 8px;
-      font-size: 15px;
-      margin-top: -4px;
-      margin-bottom: -1px;
-      
-    }
-    .sidebar .logo {
-      width: 80px;
-      margin-top: -20px;
-    }
+        /* Navbar */
+        nav {
+          background-color: #0E4088;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 5;
+            color: white;
+        }
+        nav .logo {
+            color: white;
+            font-size: 1.2em; 
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center; 
+        }
 
-    .sidebar-footer {
-      margin-top: auto; /* Push to bottom */
-      font-size: 0.8rem;
-      text-align: center;
-      padding: 10px 0;
-      color: white;
-    }
+        nav .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
 
-    .sidebar .nav-item {
-    margin-bottom: 15px; /* Tambah jarak antar menu */
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
 
-    
-    h5{
-      margin-top: -20px; /* mengatur jarak logo dan sibtan */
-    }
+        nav ul li {
+            margin-left: 15px;
+        }
 
-    header {
-    background-color: #CCE5FF; /* Warna biru muda */
-    text-align: center; 
-    color: #043873; /* Warna teks biru gelap */
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding: 15px; /* mengatur ruang didalam elemen */
-    border-radius: 40px; /* Sudut melingkar */
-    width: 80%; /* Lebar header agar proporsional */
-    margin-left: 230px;  /*memberi jarak dari sisi kiri */
-    }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.8em;
+            padding: 5px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
 
-    /* Main Content styling */
-    .content {
-      margin-left: 10px; 
-      width: calc(100% - 200px);
-      padding: 20px;
-     
-    }
+        nav ul li a:hover {
+            background-color: #5db0d0;
+        }
 
-    .hero-section {
-      background: url('img/RuanganDashboard.png') center/cover no-repeat;
-      padding: 100px 20px;
-      border-radius: 30px;
-      margin-left: 200px;
-    }
+        nav ul li .active {
+            background-color: #D3D3D3;
+        }
 
-    .hero-section h2 {
-    color: #FFE492; /* Warna teks */
-    text-align: center; /* Tengah */
-    font-size: 3rem; /* Ukuran font lebih besar */
-    font-weight: bold; /* Teks lebih tebal */
-  }
+        /* Main */
+        main {
+            flex: 1; 
+            padding: 85px 10px 10px 10px;
+            background-color: white;
+        }
 
-  .hero-section p {
-    color: #FFE492;
-    font-size: 1.5rem; /* Ukuran font lebih besar */
-    font-weight: 500; /* Tebal sedang */
-  }
-    
+        /* Info Container */
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
+        /* Info Section */
+        .info-section, .info-section2 {
+            flex: 1 1 48%; /* Berdampingan dengan lebar 48% */
+            background-color: #E9F4FB;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0px;
+        }
 
-  </style>
+        .info-text h2 {
+            margin-bottom: 15px;
+            color: #0E4088;
+            font-size: 1.5em; 
+            text-align: center;
+        }
+
+        .info-text ol {
+            margin-left: 20px;
+        }
+
+        .info-text ol li {
+            margin-bottom: 2px;
+            font-size: 0.8em; 
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0E4088;
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        /* Layout */
+        @media (max-width: 768px) {
+            .info-section, .info-section2 {
+                flex: 1 1 100%; /* Satu kolom di layar kecil */
+            }
+        }
+    </style>
 </head>
-<body class="d-flex flex-column min-vh-100">
-  <div class="d-flex flex-grow-1">
-    <!-- Sidebar -->
-    <nav class="sidebar">
-      <div class="text-center py-4">
-        <img src="img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
-        <h5>SiBTAN</h5>
-      </div>
-      <ul class="nav flex-column px-2">
-      <li class="nav-item my-2"><a href="#" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-        <li class="nav-item"><a href="#" class="nav-link ">Tata Cara</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Dataku</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Info Data</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Call Center</a></li>
-      </ul>
-      <div class="sidebar-footer">
-        © 2024 SiBTAN JTI Polinema.
-      </div>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="../img/designLogo.png" alt="Logo">
+            SIBTAN
+        </div>
+        <ul>
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link active">Informasi</a></li>
+            <li><a href="#" class="nav-link">Menu</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+        </ul>
     </nav>
 
-    <!-- Main Content -->
-    <div class="content flex-grow-1">
-      <header>
-        Sistem Informasi Bebas Tanggungan
-      </header>
-      <div class="p-4">
-        <div class="hero-section text-center mb-4">
-          <h2 style="color:#FFE492; text-align:center;" >Sistem Bebas Tanggungan</h2>
-          <p style="color:#FFE492">Jurusan Teknologi Informasi</p>
-          <!--<img src="img/RuanganDashboard.png" class="img-fluid rounded mx-auto d-block background-cover-img" style="max-width: 600px;" alt="Ruangan Dashboard">-->
-        </div>
-        <section class="info-section text-center">
-          <h4 style="color:#043873; margin-left: 200px;" >Profil Sistem Bebas Tanggungan</h4>
-          <p style="color:#043873; font-size: 14px; margin-left: 200px;">
-            Sistem "bebas tanggungan" adalah istilah yang biasanya merujuk pada suatu bentuk sistem
-            yang tidak menuntut adanya tanggung jawab atau kewajiban yang berkelanjutan dari pihak tertentu.
-            Dalam konteks administrasi, keuangan, atau hukum, sistem bebas tanggungan berarti bahwa pihak-pihak
-            yang terlibat tidak memiliki kewajiban atau hutang tertentu setelah suatu transaksi atau perjanjian selesai.
-          </p>
-        </section>
-      </div>
-    </div>
-  </div>
+    <main>
+        <div class="info-container">
+            <!-- Info Section 1 -->
+            <section class="info-section">
+                <div class="info-text">
+                    <h2>Pemberitahuan!</h2>
+                    <ol>
+                        <li>Diwajibkan mengunggah foto formal pada masing-masing akun.</li>
+                        <li>Diberitahukan kepada seluruh mahasiswa bahwa data syarat untuk pengajuan surat bebas tanggungan dapat diunggah di website SiBTaN adalah daftar kegiatan yang diikuti selama masa studi di Politeknik Negeri Malang.</li>
+                        <li>Pertanyaan lebih lanjut dapat menghubungi call center pada website SiBTaN.</li>
+                        <li>Untuk upload scan TOEIC dengan skor minimal 450 untuk Diploma.</li>
+                        <li>Apabila sudah mengikuti 1x tes gratis Polinema dan 1x ujian mandiri berbayar namun nilai masih kurang, maka akan diberikan surat keterangan dari UPA Bahasa (Grapol Lantai 3).</li>
+                    </ol>
+                </div>
+            </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Info Section 2 -->
+            <section class="info-section2">
+                <div class="info-text">
+                    <h2>Tata Cara Upload:</h2>
+                    <ol>
+                        <li>Persiapkan berkas yang akan di-upload dan pastikan sudah benar.</li>
+                        <li>Scan file dengan format PDF/PNG dan pastikan gambar sudah jelas.</li>
+                        <li>Ukuran file maksimal 3MB.</li>
+                        <li>Pastikan file sudah terunggah dengan sukses.</li>
+                        <li>Setelah file sukses terunggah, semua file akan diverifikasi oleh admin. Untuk verifikasi akan membutuhkan waktu lebih lama.</li>
+                        <li>Mohon untuk aktif mengecek website SiBTAN setelah melakukan upload dokumen.</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SiBTAN JTI Polinema.</p>
+    </footer>
 </body>
 </html>
