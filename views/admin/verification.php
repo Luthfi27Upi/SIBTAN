@@ -144,10 +144,12 @@
 
     <!-- Main Content -->
     <div class="content flex-grow-1">
+        <?php if (empty($filesToVerify)): ?>
+        <h1 style="text-align: center;">BELUM ADA UNGGAHAN</h1>
+        <?php endif; ?>
         <div class="card-section container mt-5">
         <div class="row">
         <!-- Card Template -->
-
         <?php foreach ($filesToVerify as $card): ?>
           <div class="col-md-4 mb-4">
             <div class="card-container">
