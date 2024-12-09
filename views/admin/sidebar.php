@@ -1,4 +1,4 @@
-  <style>
+<style>
     .sidebar {
         background: linear-gradient(to bottom, #021a44, #043873, #4fa3ff); 
         color: white;
@@ -47,15 +47,15 @@
     }
 
     header {
-        background-color: #CCE5FF;
+        background-color: #CCE5FF; /* Warna biru muda */
         text-align: center; 
-        color: #043873;
+        color: #043873; /* Warna teks biru gelap */
         font-size: 1.5rem;
         font-weight: 500;
-        padding: 15px;
-        border-radius: 40px;
-        width: 100%;
-        
+        padding: 15px; /* mengatur ruang didalam elemen */
+        border-radius: 40px; /* Sudut melingkar */
+        width: 80%; /* Lebar header agar proporsional */
+        margin-left: 230px;  /*memberi jarak dari sisi kiri */
     }
 
     .hero-section {
