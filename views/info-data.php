@@ -142,11 +142,7 @@
     <!-- Sidebar -->
     <nav class="sidebar">
       <div class="text-center py-4">
-main
         <img src="../img/designLogo.png" alt="Logo SiBTAN" class="logo">
-
-        <img src="../../resources/img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
- main
         <h5>SiBTAN</h5>
       </div>
       <ul class="nav flex-column px-2">
@@ -167,7 +163,6 @@ main
     <div class="content">
       <!-- Header -->
       <header>
-main
         <img src="../img/logouser.jpg" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
         <div class="user">Lutfi Triaswangga</div>
       </header>
@@ -184,18 +179,6 @@ main
           <div class="col-md-8">
             <div class="info-section">
             <ol>
-
-        <img src="../../resources/img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
-        <div class="user">Lutfi Triaswangga</div>
-      </header>
-      <main>
-        <div class="title-with-icon">
-          <img src="../../resources/img/logoinfodata.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
-          <h1 class="page-title">INFO DATA</h1>
-        </div>
-        <div class="info">
-          <ol>
- main
             <li>Berkas yang akan di-upload sudah mendapat ACC dari dosen atau admin terkait.</li>
             <li>Persiapkan berkas yang akan di-upload dan pastikan sudah benar.</li>
             <li>Scan file dengan format PDF/PNG dan pastikan gambar sudah jelas.</li>

@@ -47,15 +47,15 @@
     }
 
     header {
-        background-color: #CCE5FF; /* Warna biru muda */
+        background-color: #CCE5FF;
         text-align: center; 
-        color: #043873; /* Warna teks biru gelap */
+        color: #043873;
         font-size: 1.5rem;
         font-weight: 500;
-        padding: 15px; /* mengatur ruang didalam elemen */
-        border-radius: 40px; /* Sudut melingkar */
-        width: 80%; /* Lebar header agar proporsional */
-        margin-left: 230px;  /*memberi jarak dari sisi kiri */
+        padding: 15px;
+        border-radius: 40px;
+        width: 100%;
+        
     }
 
     .hero-section {
@@ -94,7 +94,7 @@
       <a href="tatacara.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'tatacara' ? 'active' : ''; ?>">Tata Cara</a>
     </li>
     <li class="nav-item">
-      <a href="dataku.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'dataku' ? 'active' : ''; ?>">Dataku</a>
+      <a href="dataku.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'data' ? 'active' : ''; ?>">Data</a>
     </li>
     <li class="nav-item">
       <a href="infodata.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'infodata' ? 'active' : ''; ?>">Info Data</a>

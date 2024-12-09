@@ -18,7 +18,7 @@ $formModel = new Form($db);
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-$base_prefix = '/SIBTAN';
+$base_prefix = '';
 if (strpos($request_uri, $base_prefix) === 0) {
     $request_uri = substr($request_uri, strlen($base_prefix));
 }
@@ -99,20 +99,29 @@ switch ($path) {
         $controller = new FormController($formModel);
         $controller->renderCards(); 
         break;
+
     case '/users/files/'.$id:
         $controller = new FormController($formModel);
         $controller->renderAdminVerification($id);
+
     case '/users/actionupload':
         $controller = new FormController($formModel);
         echo $controller->create();
         break;
+        
     case '/users/actionreupload':
         $controller = new FormController($formModel);
         echo $controller->update();
         break;
+
     case '/verif':
         $controller = new FormController($formModel);
         echo $controller->verifyForm();
+        break;
+
+    case '/admin/data':
+        $controller = new UserController($userModel);
+        $controller->index();
         break;
     default:
         header("HTTP/1.0 404 Not Found");
