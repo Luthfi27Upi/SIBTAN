@@ -83,7 +83,7 @@ class UserController {
 
     public function index() {
         $users = $this->userModel->getAll();
-        require 'views/users/index.php';
+        require 'views/admin/data.php';
     }
 }
 ?>
