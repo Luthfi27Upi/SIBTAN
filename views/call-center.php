@@ -20,6 +20,7 @@
       overflow-y: auto;
       scrollbar-width: thin;
     }
+    
 
     .sidebar .nav-link {
       color: white;
@@ -102,6 +103,10 @@
       border-radius: 8px;
     }
 
+    .info-section h4 {
+      color: #2B74C4;
+      margin-bottom: 10px;
+    }
 
     .info-section p {
       color: #043873;
@@ -142,11 +147,7 @@
     <!-- Sidebar -->
     <nav class="sidebar">
       <div class="text-center py-4">
-main
         <img src="../img/designLogo.png" alt="Logo SiBTAN" class="logo">
-
-        <img src="../../resources/img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
- main
         <h5>SiBTAN</h5>
       </div>
       <ul class="nav flex-column px-2">
@@ -154,9 +155,9 @@ main
         <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Tata Cara</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Dataku</a></li>
-        <li class="nav-item"><a href="#" class="nav-link active">Info Data</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Info Data</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Call Center</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active">Call Center</a></li>
       </ul>
       <div class="sidebar-footer">
         © 2024 SiBTAN JTI Polinema.
@@ -167,15 +168,14 @@ main
     <div class="content">
       <!-- Header -->
       <header>
-main
         <img src="../img/logouser.jpg" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
         <div class="user">Lutfi Triaswangga</div>
       </header>
 
       <!-- Page Title -->
       <div class="title-with-icon">
-        <img src="../img/logoinfodata.jpg" alt="Call Center" style="width: 40px; height: 40px;">
-        <h1 class="page-title">INFO DATA</h1>
+        <img src="../img/call.png" alt="Call Center" style="width: 40px; height: 40px;">
+        <h1 class="page-title">INFO CALL CENTER</h1>
       </div>
 
       <!-- Info Call Center Section -->
@@ -183,33 +183,9 @@ main
         <div class="row">
           <div class="col-md-8">
             <div class="info-section">
-            <ol>
-
-        <img src="../../resources/img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
-        <div class="user">Lutfi Triaswangga</div>
-      </header>
-      <main>
-        <div class="title-with-icon">
-          <img src="../../resources/img/logoinfodata.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
-          <h1 class="page-title">INFO DATA</h1>
-        </div>
-        <div class="info">
-          <ol>
- main
-            <li>Berkas yang akan di-upload sudah mendapat ACC dari dosen atau admin terkait.</li>
-            <li>Persiapkan berkas yang akan di-upload dan pastikan sudah benar.</li>
-            <li>Scan file dengan format PDF/PNG dan pastikan gambar sudah jelas.</li>
-            <li>Ukuran file maks 3MB.</li>
-            <li>Pastikan file sudah terunggah dengan sukses.</li>
-            <li>Setelah file sukses terunggah, semua file akan diverifikasi oleh admin. Untuk verifikasi akan membutuhkan sedikit waktu lebih lama.</li>
-            <li>Mohon untuk aktif mengecek website SiBTaN setelah melakukan upload dokumen.</li>
-            <li>Pemberitahuan!</li>
-            <li>Diwajibkan mengunggah foto formal pada masing-masing akun.</li>
-            <li>Diberitahukan kepada seluruh mahasiswa bahwa data syarat untuk pengajuan surat bebas tanggungan dapat diunggah di website SiBTaN adalah daftar kegiatan yang diikuti selama masa studi di Politeknik Negeri Malang.</li>
-            <li>Pertanyaan lebih lanjut dapat menghubungi call center pada website SiBTaN.</li>
-            <li>Untuk upload scan TOEIC dengan skor minimal 450 untuk Diploma 4. Apabila sudah mengikuti 1x tes gratis Polinema dan 1x ujian mandiri berbayar namun nilai masih kurang,
-              maka akan diberikan surat keterangan dari UPA Bahasa (Grapol Lantai 3).</li>
-          </ol>
+              <p>Jika Anda memiliki pertanyaan, Anda dapat menghubungi call center kami di nomor berikut:</p>
+              <p><strong>Telepon:</strong> 0800-123-4567</p>
+              <p><strong>Email:</strong> support@sibtan.ac.id</p>
             </div>
           </div>
 
