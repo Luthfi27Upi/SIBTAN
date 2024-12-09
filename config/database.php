@@ -5,11 +5,10 @@ class Database {
     
     private function __construct() {
       
-<<<<<<< HEAD
+
         $serverName = "USER";
-=======
-        $serverName = "MSI\SQLEXPRESS";
->>>>>>> cfb702b77dcb15ba96ab5144cdaf8b2ef45a39d2
+
+        //$serverName = "MSI\SQLEXPRESS"; //cfb702b77dcb15ba96ab5144cdaf8b2ef45a39d2
         $connectionOptions = [
             "Database" => "SIBTAN",
             
