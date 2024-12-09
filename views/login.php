@@ -12,23 +12,27 @@
     <div class="login-box">
       <div class="login-content">
         <div class="login-form">
-          <img src="img/logo.png" alt="Logo Sistem Bebas Tanggungan" class="logo">
-          <h1>Sistem Bebas Tanggungan</h1>
+            <div class="header">
+              <img src="img/logologin.png" alt="Logo Sistem Bebas Tanggungan" class="logo">
+              <h1>Sistem Bebas Tanggungan</h1>
+            </div>
           <form id="loginForm" method="POST" action="actionlogin">
             <div class="form-group">
               <label for="username">Username</label>
               <input type="text" name="nim" id="nim" placeholder="Username">
             </div>
-            <div class="form-group">
+            <div class="form-group ">
               <label for="password">Kata Sandi</label>
-              <input type="password" name="password" id="password" placeholder="Kata Sandi">
-              <span class="toggle-password">&#128065;</span>
+              <div class="password-wrapper">
+                  <input type="password" name="password" id="password" placeholder="Kata Sandi">
+                  <span class="toggle-password">&#128065;</span>
+              </div>
             </div>
             <button type="submit" class="login-button">Masuk</button>
           </form>
         </div>
         <div class="login-image">
-          <img src="img/building.jpg" alt="Gedung Kampus">
+          <img src="img/gedunglogin.jpg" alt="Gedung Kampus">
         </div>
       </div>
     </div>
@@ -67,6 +71,16 @@
         }
         });
     });
+
+    $(document).ready(function () {
+        $(".toggle-password").click(function () {
+            let input = $("#password");
+            let type = input.attr("type") === "password" ? "text" : "password"; //Logika untuk menentukan apakah tipe input itu password atau bukan
+            input.attr("type", type);  //merubah ke teks atau password seperti simbol titik
+            $(this).toggleClass("active");  //digunakan untuk mengubah gaya ikon dari mata terbuka ke mata tertutup.
+        });
+    });
+
     </script>
 </body>
 </html>

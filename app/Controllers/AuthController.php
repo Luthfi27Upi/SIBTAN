@@ -7,7 +7,7 @@ class AuthController {
     }
 
     public function login() {
-        include "views/login.php";
+        include "views/auth/login.php";
     }
 
     public function otp() {
@@ -78,7 +78,8 @@ class AuthController {
                 $_SESSION['user'] = [
                     'nim' => $user['NIM'],
                     'username' => $user['USERNAME'],
-                    'role' => $user['ROLE']
+                    'role' => $user['ROLE'],
+                    'id' => $user['ID']
                 ];
 
                 echo json_encode([

@@ -5,12 +5,16 @@ class Database {
     
     private function __construct() {
       
-        $serverName = "LAPTOP-69O5OEH3\SQLEXPRESS";
+<<<<<<< HEAD
+        $serverName = "LAPTOP-MASBROV";
+=======
+        $serverName = "MSI\SQLEXPRESS";
+>>>>>>> f3b44769ba10fca3f874b76f098f220954521489
         $connectionOptions = [
             "Database" => "SIBTAN",
             
             "Uid" => "sa",
-            "PWD" => "12345",
+            "PWD" => "gampangpol",
            
             "TrustServerCertificate" => true,
             "Encrypt" => false

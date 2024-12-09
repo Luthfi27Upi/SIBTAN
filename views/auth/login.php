@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Bebas Tanggungan</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="../resources/css/login.css">
 </head>
 <body>
-    <form id="loginForm" method="POST" action="/login">
-        <label for="nim">Masukkan kode nim:</label>
-        <input type="text" name="nim" id="nim" maxlength="6">
-        <br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
-        <button type="submit">Verifikasi</button>
-        <a href="../auth/password-request.php">forgot password?</a>
-    </form>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-content">
+        <div class="login-form">
+          <img src="img/logo.png" alt="Logo Sistem Bebas Tanggungan" class="logo">
+          <h1>Sistem Bebas Tanggungan</h1>
+          <form id="loginForm" method="POST" action="actionlogin">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" name="nim" id="nim" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="password">Kata Sandi</label>
+              <input type="password" name="password" id="password" placeholder="Kata Sandi">
+              <span class="toggle-password">&#128065;</span>
+            </div>
+            <button type="submit" class="login-button">Masuk</button>
+            <a href="views/auth/password-request.php">Lupa Password?</a>
+          </form>
+        </div>
+        <div class="login-image">
+          <img src="img/building.jpg" alt="Gedung Kampus">
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script>
+  <script>
     $(function() {
         $('#loginForm').on('submit', function(e) {
             e.preventDefault();
@@ -39,7 +58,7 @@
                     if (jsonResponse.status === "error") {
                         alert('Error: ' + jsonResponse.message);
                     } else if (jsonResponse.status === "success") {
-                        window.location.href = '/views/auth/otp.php';
+                        window.location.href = 'auth/otp';
                     }
                 },
                 error: function(xhr, status, error) {
@@ -51,4 +70,4 @@
     });
     </script>
 </body>
-</html> 
+</html>
