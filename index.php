@@ -106,6 +106,10 @@ switch ($path) {
         $controller = new FormController($formModel);
         echo $controller->create();
         break;
+    case '/users/actionreupload':
+        $controller = new FormController($formModel);
+        echo $controller->update();
+        break;
     case '/verif':
         $controller = new FormController($formModel);
         echo $controller->verifyForm();
