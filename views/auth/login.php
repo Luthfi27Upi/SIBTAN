@@ -12,7 +12,7 @@
     <div class="login-box">
       <div class="login-content">
         <div class="login-form">
-          <img src="img/logo.png" alt="Logo Sistem Bebas Tanggungan" class="logo">
+          <img src="resources/img/logologin.png" alt="Logo Sistem Bebas Tanggungan" class="logo">
           <h1>Sistem Bebas Tanggungan</h1>
           <form id="loginForm" method="POST" action="actionlogin">
             <div class="form-group">
@@ -29,7 +29,7 @@
           </form>
         </div>
         <div class="login-image">
-          <img src="img/building.jpg" alt="Gedung Kampus">
+          <img src="resources/img/gedunglogin.jpg" alt="Gedung Kampus">
         </div>
       </div>
     </div>

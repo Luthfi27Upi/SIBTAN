@@ -1,0 +1,21 @@
+.content {
+    margin: 40px;
+    font-family: "Inter", sans-serif;
+}
+
+.cell-content {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+th, td {
+    font-size: 14px;
+
+}
+
+td {
+    height: 0;
+    min-height: 100px;
+}

@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <link rel="stylesheet" href="../resources/css/dataku.css">
+  <link rel="stylesheet" href="/resources/css/dataku.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -39,7 +39,7 @@
                   </div>
                   <form id="uploadForm-<?= $card['label'] ?>" action="actionupload" method="POST"
                     enctype="multipart/form-data" style="display: none;">
-                    <input type="hidden" name="label" value="<?= $card['fileName'] ?>">
+                    <input type="hidden" name="label" value="<?= $card['label'] ?>">
                     <input type="file" name="uploaded_file" id="fileInput-<?= $card['label'] ?>" accept="application/pdf">
                   </form>
                   <script>
@@ -67,7 +67,7 @@
                   </div>
                   <form id="uploadForm-<?= $card['label'] ?>-reupload" action="actionreupload" method="POST"
                     enctype="multipart/form-data" style="display: none;">
-                    <input type="hidden" name="label" value="<?= $card['fileName'] ?>">
+                    <input type="hidden" name="label" value="<?= $card['label'] ?>">
                     <input type="file" name="uploaded_file" id="fileInput-<?= $card['label'] ?>-reupload"
                       accept="application/pdf">
                   </form>
@@ -136,24 +136,24 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.querySelector('#pdfModal');
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.querySelector('#pdfModal');
 
-      modal.addEventListener('show.bs.modal', () => {
-        document.body.classList.add('modal-open-hover-disabled');
+        modal.addEventListener('show.bs.modal', () => {
+          document.body.classList.add('modal-open-hover-disabled');
+        });
+
+        modal.addEventListener('hidden.bs.modal', () => {
+          document.body.classList.remove('modal-open-hover-disabled');
+        });
       });
 
-      modal.addEventListener('hidden.bs.modal', () => {
-        document.body.classList.remove('modal-open-hover-disabled');
+      $(document).ready(function () {
+        $("#sidebar-container").load("sidebar.html");
       });
-    });
-
-    $(document).ready(function () {
-      $("#sidebar-container").load("sidebar.html");
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

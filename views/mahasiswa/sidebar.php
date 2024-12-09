@@ -46,42 +46,11 @@
     h5{
         margin-top: -20px;
     }
-
-    header {
-        background-color: #CCE5FF;
-        text-align: center; 
-        color: #043873;
-        font-size: 1.5rem;
-        font-weight: 500;
-        padding: 15px;
-        border-radius: 40px;
-        width: 100%;
-        
-    }
-
-    .hero-section {
-        background: url('../../resources/img/RuanganDashboard.png') center/cover no-repeat;
-        padding: 100px 20px;
-        border-radius: 30px;
-    }
-
-    .hero-section h2 {
-        color: #FFE492; 
-        text-align: center;
-        font-size: 3rem; 
-        font-weight: bold;
-    }
-
-    .hero-section p {
-        color: #FFE492;
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
     </style>
 
 <nav class="sidebar">
   <div class="text-center py-4">
-    <img src="img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
+    <img src="/img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
     <h5>SiBTAN</h5>
   </div>
   <ul class="nav flex-column px-2">
