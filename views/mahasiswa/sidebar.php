@@ -10,6 +10,7 @@
         top: 0;
         left: 0;
         padding-top: 0.10px;
+        position: fixed;
     }
 
     .sidebar .nav-link {

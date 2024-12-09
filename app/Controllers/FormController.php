@@ -18,8 +18,8 @@ class FormController
             "DistribusiSkripsi" => "Distribusi Laporan Skripsi",
             "DistribusiPKL" => "Distribusi Laporan Magang / PKL",
             "Kompen" => "Pernyataan Bebas Kompen",
-            "TOEFL" => "Scan TOEIC / TOEFL"
-            
+            "TOEFL" => "Scan TOEIC / TOEFL",
+            "PUSTAKA" => "Pernyataan Bebas Pustaka"
         ];
 
         $cardStatuses = [];
@@ -40,7 +40,6 @@ class FormController
     public function create() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $label = $_POST['label'];
-            $file = $_FILES['uploaded_file'];
 
             if (isset($_FILES['uploaded_file']) && $_FILES['uploaded_file']['error'] == UPLOAD_ERR_OK) {
                 $fileTmpPath = $_FILES['uploaded_file']['tmp_name'];
@@ -57,6 +56,27 @@ class FormController
             echo "No file submitted.";
         }
     }
+
+    public function update() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $label = $_POST['label'];
+
+            if (isset($_FILES['uploaded_file']) && $_FILES['uploaded_file']['error'] == UPLOAD_ERR_OK) {
+                $fileTmpPath = $_FILES['uploaded_file']['tmp_name'];
+                $fileName = uniqid() . "_" . $_FILES['uploaded_file']['name'];
+                $filePath = 'uploads/' . basename($fileName); 
+
+                move_uploaded_file($fileTmpPath, $filePath);
+            }
+        
+            $userId = $_SESSION['user']['id'];
+            $this->formModel->update($userId, $label,$filePath, 'Menunggu Verifikasi');
+            header('Location: /users/dataku');
+        } else {
+            echo "No file submitted.";
+        }
+    }
+
     public function renderAdminVerification($id) {
         
         $filesToVerify = $this->formModel->verificationPending($id);
