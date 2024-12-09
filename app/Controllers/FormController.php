@@ -14,18 +14,18 @@ class FormController
 
         $cards = [
             "APA" => "Alat / Program / Aplikasi",
-            "PKL" => "Laporan Magang / PKL",
-            "DistribusiSkripsi" => "Distribusi Laporan Skripsi",
-            "DistribusiPKL" => "Distribusi Laporan Magang / PKL",
-            "Kompen" => "Pernyataan Bebas Kompen",
-            "TOEFL" => "Scan TOEIC / TOEFL",
-            "PUSTAKA" => "Pernyataan Bebas Pustaka"
+            "LAPORAN" => "Laporan",
+            "PUBLIKASI" => "Pernyataan Publikasi",
+            "SKRIPSI" => "Distribusi Laporan Skripsi",
+            "MAGANG" => "Distribusi Laporan Magang",
+            "KOMPEN" => "Bebas Kompensasi",
+            "TOEFL" => "Scan TOEIC",
         ];
 
         $cardStatuses = [];
         foreach ($cards as $key => $label) {
-            $status = $this->formModel->checkForm($userId, $key);
-            $filePath = $this->formModel->getFile($userId, $key);
+            $status = $this->formModel->checkForm($userId, $label);
+            $filePath = $this->formModel->getFile($userId, $label);
             $cardStatuses[] = [
                 'fileName' => $key,
                 'label' => $label,
@@ -35,6 +35,11 @@ class FormController
         }
 
         require 'views/mahasiswa/dataku.php';
+    }
+
+    public function renderTables() {
+        $forms = $this->formModel->getAll();
+        require 'views/admin/data.php';
     }
 
     public function create() {
@@ -81,6 +86,29 @@ class FormController
         
         $filesToVerify = $this->formModel->verificationPending($id);
 
+        $role = $_SESSION['user']['role'];
+
+        $allowedFileNames = [];
+    
+        if ($role == 'admin_jurusan') {
+            $allowedFileNames = [
+                'Alat / Program / Aplikasi',
+                'Laporan',
+                'Pernyataan Publikasi'
+            ];
+        } elseif ($role == 'admin_prodi') {
+            $allowedFileNames = [
+                'Distribusi Laporan Skripsi',
+                'Distribusi Laporan Magang',
+                'Bebas Kompensasi',
+                'Scan TOEIC'
+            ];
+        }
+    
+        $filteredFiles = array_filter($filesToVerify, function ($file) use ($allowedFileNames) {
+            return in_array($file['FILE_NAME'], $allowedFileNames);
+        });
+
         require 'views/admin/verification.php'; 
     }
     public function verifyForm() {
@@ -95,8 +123,7 @@ class FormController
                 $this->formModel->updateStatus($userId, $fileName, "Ditolak");
             }
     
-            
-            header('Location: views/admin/verification.php'); 
+            header('Location: /users/files/'.$userId); 
             exit();
         }
     }
