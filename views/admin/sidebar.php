@@ -10,7 +10,6 @@
         top: 0;
         left: 0;
         padding-top: 0.10px;
-        position: fixed;
     }
 
     .sidebar .nav-link {
@@ -81,7 +80,7 @@
 
 <nav class="sidebar">
   <div class="text-center py-4">
-    <img src="img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
+    <img src="/img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
     <h5>SiBTAN</h5>
   </div>
   <ul class="nav flex-column px-2">

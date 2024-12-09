@@ -18,8 +18,6 @@
       flex-direction: column;
       position: fixed;
       height: 100vh;
-      top: 0; /* ensure sidebar is aligned with the top */
-      left: 0;
       padding-top: 0.1px;
     }
 
@@ -112,17 +110,17 @@
     <!-- Sidebar -->
     <nav class="sidebar">
       <div class="text-center py-4">
-        <img src="../img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
+        <img src="img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
         <h5>SiBTAN</h5>
       </div>
       <ul class="nav flex-column px-2">
-      <li class="nav-item my-2"><a href="#" class="nav-link">Home</a></li>
+      <li class="nav-item my-2"><a href="DashboardAdmJurusan.php" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-        <li class="nav-item"><a href="#" class="nav-link active">Tata Cara</a></li>
+        <li class="nav-item"><a href="TataCaraAdmJurusan.php" class="nav-link active">Tata Cara</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Dataku</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Info Data</a></li>
+        <li class="nav-item"><a href="InfoAdmJurusan.php" class="nav-link">Info Data</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Call Center</a></li>
+        <li class="nav-item"><a href="CallAdmJurusan.php" class="nav-link">Call Center</a></li>
       </ul>
       <div class="sidebar-footer">
         © 2024 SiBTAN JTI Polinema.
@@ -132,7 +130,7 @@
     <!-- Main Content -->
     <div class="content">
       <header>
-        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
+        <img src="img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
         <div class="user">Lutfi Triaswangga</div>
       </header>
       <main>

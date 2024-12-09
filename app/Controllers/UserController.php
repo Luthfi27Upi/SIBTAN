@@ -19,6 +19,7 @@ class UserController {
             $role = $_POST['ROLE'];
             $tempat_lahir = $_POST['tempat_lahir'];
             $tanggal_lahir = $_POST['tanggal_lahir'];
+            $jurusan = $_POST['jurusan'];
             
             $imagePath = null;
             if (isset($_FILES['IMAGE']) && $_FILES['IMAGE']['error'] == UPLOAD_ERR_OK) {
@@ -30,7 +31,7 @@ class UserController {
                 move_uploaded_file($imageTmpPath, $imagePath);
             }
 
-            $this->userModel->create($id, $username, $password, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir,$tanggal_lahir,$imagePath);
+            $this->userModel->create($id, $username, $password, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir,$tanggal_lahir,$imagePath,$jurusan);
             header('Location: ../users');
             exit;
         }
@@ -53,8 +54,9 @@ class UserController {
             $role = $_POST['ROLE'];
             $tempat_lahir = $_POST['tempat_lahir'];
             $tanggal_lahir = $_POST['tanggal_lahir'];
+            $jurusan = $_POST['jurusan'];
     
-            // Initialize imagePath with the current image path from the database
+
             $user = $this->userModel->find($id);
             $imagePath = $user['imagePath'];
     
@@ -66,7 +68,7 @@ class UserController {
                 move_uploaded_file($imageTmpPath, $imagePath);
             }
     
-            $this->userModel->update($id, $username, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir, $tanggal_lahir, $imagePath);
+            $this->userModel->update($id, $username, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir, $tanggal_lahir, $imagePath,$jurusan);
             
             header('Location: /users');
             exit;

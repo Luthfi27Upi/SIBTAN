@@ -24,6 +24,7 @@
             <option value="admin_prodi" <?php echo $user['ROLE'] == 'admin_prodi' ? 'selected' : ''; ?>>Admin Prodi</option>
             <option value="mahasiswa" <?php echo $user['ROLE'] == 'mahasiswa' ? 'selected' : ''; ?>>Mahasiswa</option>
         </select>
+        <input type="text" name="jurusan" placeholder="jurusan">
         <button type="submit">Update User</button>
     </form>
 </body>

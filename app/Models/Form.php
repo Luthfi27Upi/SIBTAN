@@ -12,7 +12,6 @@ class Form {
         $params = [$id, $file_name, $file_path, $status];
     
         $stmt = sqlsrv_query($this->db, $sql, $params);
-    
 
         if ($stmt === false) {
             echo $stmt;
@@ -21,6 +20,19 @@ class Form {
 
         return true; 
     }
+
+    public function update($id, $file_name, $file_path, $status) {
+        $sql = "UPDATE [FILES] SET file_path = ?, status = ? WHERE id = ? AND file_name = ?";
+        $params = [$file_path, $status, $id, $file_name];
+    
+        $stmt = sqlsrv_query($this->db, $sql, $params);
+    
+        if ($stmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+    
+        return true; 
+    }    
 
     public function checkForm($userId, $file_name) {
         $sql = "SELECT status FROM FILES WHERE id = ? AND file_name = ?";
@@ -63,9 +75,10 @@ class Form {
     
         return true; 
     }
-    public function verificationPending() {
-        $sql = "SELECT * FROM FILES WHERE status = 'Menunggu Verifikasi'";
-        $stmt = sqlsrv_query($this->db, $sql);
+    public function verificationPending($id) {
+        $sql = "SELECT * FROM FILES WHERE status = 'Menunggu Verifikasi' AND id = ?";
+        $params = [$id];
+        $stmt = sqlsrv_query($this->db, $sql, $params);
 
         if ($stmt === false) {
             die(print_r(sqlsrv_errors(), true)); 
