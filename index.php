@@ -99,14 +99,16 @@ switch ($path) {
         $controller = new FormController($formModel);
         $controller->renderCards(); 
         break;
-
+    case '/users/files/'.$id:
+        $controller = new FormController($formModel);
+        $controller->renderAdminVerification($id);
     case '/users/actionupload':
         $controller = new FormController($formModel);
         echo $controller->create();
         break;
-    case '/actionVerify':
+    case '/users/actionreupload':
         $controller = new FormController($formModel);
-        echo $controller->renderAdminVerification();
+        echo $controller->update();
         break;
     case '/verif':
         $controller = new FormController($formModel);

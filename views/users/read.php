@@ -11,7 +11,7 @@
     <p>Phone Number: <?php echo htmlspecialchars($user['NO_HP']); ?></p>
     <p>NIM: <?php echo htmlspecialchars($user['NIM']); ?></p>
     <p>Address: <?php echo htmlspecialchars($user['ALAMAT']); ?></p>
-    <p>Gender: <?php echo $user['JENIS_KELAMIN'] ? 'Male' : 'Female'; ?></p>
+    <p>Gender: <?php echo $user['JENIS_KELAMIN'] ? 'Laki-laki' : 'Perempuan'; ?></p>
     <p>Role: <?php echo htmlspecialchars($user['ROLE']); ?></p>
        <?php if (!empty($user['image'])): ?>
         <img src="/<?php echo htmlspecialchars($user['image']); ?>" alt="User Image" style="max-width: 200px; max-height: 200px;">

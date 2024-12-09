@@ -267,7 +267,7 @@
     <!-- Sidebar -->
     <nav class="sidebar">
       <div class="text-center py-4">
-        <img src="img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
+        <img src="../../resources/img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
         <h5>SiBTAN</h5>
       </div>
       <ul class="nav flex-column px-2">
@@ -318,12 +318,12 @@
       </div>
 =======
       <header>
-        <img src="img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
+        <img src="../../resources/img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
         <div class="user">Lutfi Triaswangga</div>
       </header>
       <main>
         <div class="title-with-icon">
-          <img src="img/logoinfodata.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
+          <img src="../../resources/img/logoinfodata.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
           <h1 class="page-title">INFO CALL CENTER</h1>
         </div>
         <div class="cointainer mt-4">
@@ -334,7 +334,7 @@
                     <p class="text-muted">Show 20 Previous Message</p>
                     <div class="messages">
                     <div class="message-item mb-3 d-flex align-items-start">
-                        <img src="img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
+                        <img src="../../resources/img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
                         <div>
                         <div class="fw-bold">Lutfi Triaswangga</div>
                         <small class="text-muted">27 Oktober 2024 20.05</small>
@@ -344,7 +344,7 @@
                     </div>
                     <!-- Salin div .message-item untuk mengulang pesan -->
                     <div class="message-item mb-3 d-flex align-items-start">
-                        <img src="img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
+                        <img src="../../resources/img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
                         <div>
                         <div class="fw-bold">Lutfi Triaswangga</div>
                         <small class="text-muted">27 Oktober 2024 20.05</small>

@@ -18,8 +18,6 @@
       flex-direction: column;
       position: fixed;
       height: 100vh;
-      top: 0; /* ensure sidebar is aligned with the top */
-      left: 0;
       padding-top: 0.10px;
     }
 
@@ -82,7 +80,7 @@
     }
 
     .hero-section {
-      background: url('img/RuanganDashboard.png') center/cover no-repeat;
+      background: url('../img/RuanganDashboard.png') center/cover no-repeat;
       padding: 100px 20px;
       border-radius: 30px;
       margin-left: 200px;
@@ -110,17 +108,17 @@
     <!-- Sidebar -->
     <nav class="sidebar">
       <div class="text-center py-4">
-        <img src="../img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
+        <img src="img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
         <h5>SiBTAN</h5>
       </div>
       <ul class="nav flex-column px-2">
-      <li class="nav-item my-2"><a href="#" class="nav-link active">Home</a></li>
+      <li class="nav-item my-2"><a href="DashboardAdmJurusan.php" class="nav-link active">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-        <li class="nav-item"><a href="#" class="nav-link ">Tata Cara</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Dataku</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Info Data</a></li>
+        <li class="nav-item"><a href="TataCaraAdmJurusan.php" class="nav-link ">Tata Cara</a></li>
+        <li class="nav-item"><a href="DatakuAdmJurusan.php" class="nav-link">Dataku</a></li>
+        <li class="nav-item"><a href="InfoAdmJurusan.php" class="nav-link">Info Data</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Call Center</a></li>
+        <li class="nav-item"><a href="CallAdmJurusan.php" class="nav-link">Call Center</a></li>
       </ul>
       <div class="sidebar-footer">
         © 2024 SiBTAN JTI Polinema.
