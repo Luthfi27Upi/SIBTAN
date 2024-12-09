@@ -6,7 +6,6 @@ class Database {
     private function __construct() {
       
 
-        $serverName = "LAPTOP-MASBROV";
         $serverName = "MSI\SQLEXPRESS";
 
         $connectionOptions = [
