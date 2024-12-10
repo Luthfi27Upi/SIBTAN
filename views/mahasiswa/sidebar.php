@@ -58,9 +58,6 @@
       <a href="home" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'home' ? 'active' : ''; ?>">Home</a>
     </li>
     <li class="nav-item">
-      <a href="profile" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'profile' ? 'active' : ''; ?>">Profile</a>
-    </li>
-    <li class="nav-item">
       <a href="tatacara" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'tatacara' ? 'active' : ''; ?>">Tata Cara</a>
     </li>
     <li class="nav-item">
