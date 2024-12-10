@@ -1,3 +1,12 @@
+<?php
+
+if (is_array($_SESSION['user']['jurusan'])) {
+
+    $jurusanString = implode(', ', $_SESSION['user']['jurusan']);
+} else {
+    $jurusanString = $_SESSION['user']['jurusan'] ?? 'Jurusan tidak tersedia';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -133,12 +142,12 @@
             <!-- Profile Section -->
             <div class="col-md-4 ms-5"style="margin-top: -95px;">
               <div class="bg-primary">
-                <img src="../../resources/img/logouser.jpg" alt="User Avatar" class="rounded-circle mb-6">
+                <img src="/<?= $_SESSION['user']['image']?>" alt="User Avatar" class="rounded-circle mb-6">
                   <div class="identitas ">
                   <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;"><?= $_SESSION['user']['username']?></span>
                   <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;"><?= $_SESSION['user']['nim']?></span>
                   <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;"><?= $_SESSION['user']['role']?></span>
-                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;"><?= $_SESSION['user']['jurusan']?></span>
+                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;"><?=$jurusanString;?></span>
                 </div>
               </div>
             </div>
