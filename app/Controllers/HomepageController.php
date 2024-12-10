@@ -15,19 +15,35 @@ class HomepageController
     }
 
     public function home() {
-        require 'views/mahasiswa/index.php';
+        if ($_SESSION['user']['role'] == 'mahasiswa') {
+            require 'views/mahasiswa/index.php';
+        } else {
+            require 'views/admin/index.php';
+        }
     }
 
     public function profile() {
-        require 'views/mahasiswa/profile.php';
+        if ($_SESSION['user']['role'] == 'mahasiswa') {
+            require 'views/mahasiswa/profile.php';
+        } else {
+            require 'views/admin/profile.php';
+        }
     }
     
     public function tatacara() {
-        require 'views/mahasiswa/tatacara.php';
+        if ($_SESSION['user']['role'] == 'mahasiswa') {
+            require 'views/mahasiswa/tatacara.php';
+        } else {
+            require 'views/admin/tatacara.php';
+        }
     }
 
     public function infodata() {
-        require 'views/mahasiswa/infodata.php';
+        if ($_SESSION['user']['role'] == 'mahasiswa') {
+            require 'views/mahasiswa/infodata.php';
+        } else {
+            require 'views/admin/infodata.php';
+        }
     }
 
     public function callcenter() {

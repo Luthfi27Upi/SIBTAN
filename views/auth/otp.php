@@ -54,9 +54,9 @@
                         } else if (jsonResponse.status === "success") {
                             var userRole = jsonResponse.role; 
                             if (userRole === 'admin_jurusan') {
-                                window.location.href = 'index'; 
+                                window.location.href = '/home'; 
                             } else if (userRole === 'admin_prodi') {
-                                window.location.href = '../dashboardAdminProdi.php'; 
+                                window.location.href = '/home'; 
                             } else {
                                 window.location.href = '/home'; 
                             }

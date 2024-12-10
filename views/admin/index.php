@@ -8,53 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <style>
-    /* Sidebar styling */
-    .sidebar {
-      background: linear-gradient(to bottom, #021a44, #043873, #4fa3ff); 
-      color: white;
-      min-width: 200px;
-      max-width: 200px;
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      height: 100vh;
-      padding-top: 0.10px;
-    }
-
-    .sidebar .nav-link {
-      color: white;
-      font-weight: 500;
-      padding: 10px 20px;
-    }
-
-    .sidebar .nav-link.active, .sidebar .nav-link:hover{
-      background-color: #FFE492; 
-      color: white;
-      padding: 3px 6px;
-      border-radius: 8px;
-      font-size: 15px;
-      margin-top: -4px;
-      margin-bottom: -1px;
-      
-    }
-    .sidebar .logo {
-      width: 80px;
-      margin-top: -20px;
-    }
-
-    .sidebar-footer {
-      margin-top: auto; /* Push to bottom */
-      font-size: 0.8rem;
-      text-align: center;
-      padding: 10px 0;
-      color: white;
-    }
-
-    .sidebar .nav-item {
-    margin-bottom: 15px; /* Tambah jarak antar menu */
-    }
-
-    
+    /* Sidebar styling */ 
     h5{
       margin-top: -20px; /* mengatur jarak logo dan sibtan */
     }
@@ -106,24 +60,7 @@
 <body class="d-flex flex-column min-vh-100">
   <div class="d-flex flex-grow-1">
     <!-- Sidebar -->
-    <nav class="sidebar">
-      <div class="text-center py-4">
-        <img src="img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
-        <h5>SiBTAN</h5>
-      </div>
-      <ul class="nav flex-column px-2">
-      <li class="nav-item my-2"><a href="DashboardAdmJurusan.php" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-        <li class="nav-item"><a href="TataCaraAdmJurusan.php" class="nav-link ">Tata Cara</a></li>
-        <li class="nav-item"><a href="DatakuAdmJurusan.php" class="nav-link">Dataku</a></li>
-        <li class="nav-item"><a href="InfoAdmJurusan.php" class="nav-link">Info Data</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
-        <li class="nav-item"><a href="CallAdmJurusan.php" class="nav-link">Call Center</a></li>
-      </ul>
-      <div class="sidebar-footer">
-        © 2024 SiBTAN JTI Polinema.
-      </div>
-    </nav>
+    <?php include 'sidebar.php'; ?>
 
     <!-- Main Content -->
     <div class="content flex-grow-1">
