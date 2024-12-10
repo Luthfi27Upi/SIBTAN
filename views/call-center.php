@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <style>
-    /* Sidebar Styling */
+    /* Sidebar */
     .sidebar {
       background: linear-gradient(to bottom, #021a44, #043873, #4fa3ff); 
       color: white;
@@ -67,7 +67,7 @@
       margin-left: 10px;
     }
 
-    /* Main Content */
+    /* Content */
     .content {
       margin-left: 220px;
       padding: 20px;
@@ -113,7 +113,7 @@
       font-size: 14px;
     }
 
-    /* Scrollable Messages */
+    /* Scroll pesan */
     .messages-container {
       max-height: 400px;
       overflow-y: auto;
@@ -127,7 +127,7 @@
       margin-bottom: 10px;
     }
 
-    /* Responsiveness */
+    /* Responsive */
     @media (max-width: 768px) {
       .sidebar {
         width: 100px;
@@ -164,7 +164,6 @@
       </div>
     </nav>
 
-    <!-- Main Content -->
     <div class="content">
       <!-- Header -->
       <header>
@@ -172,7 +171,6 @@
         <div class="user">Lutfi Triaswangga</div>
       </header>
 
-      <!-- Page Title -->
       <div class="title-with-icon">
         <img src="../img/call.png" alt="Call Center" style="width: 40px; height: 40px;">
         <h1 class="page-title">INFO CALL CENTER</h1>

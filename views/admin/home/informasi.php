@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SISTEM BEBAS TANGGUNGAN</title>
     <style>
-        /* Default */
+        /* umum */
         * {
             margin: 0;
             padding: 0;
@@ -92,7 +92,7 @@
 
         /* Info Section */
         .info-section, .info-section2 {
-            flex: 1 1 48%; /* Berdampingan dengan lebar 48% */
+            flex: 1 1 48%; /*jarak antar box*/
             background-color: #E9F4FB;
             padding: 10px;
             border-radius: 10px;
@@ -125,7 +125,7 @@
             font-size: 0.9em;
         }
 
-        /* Layout */
+        /* Layout responsive */
         @media (max-width: 768px) {
             .info-section, .info-section2 {
                 flex: 1 1 100%; /* Satu kolom di layar kecil */

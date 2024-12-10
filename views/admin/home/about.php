@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SISTEM BEBAS TANGGUNGAN</title>
     <style>
-        /* Default */
+        /* untuk semua */
         * {
             margin: 0;
             padding: 0;
@@ -76,33 +76,32 @@
             background-color: #D3D3D3;
         }
 
-        /* Main */
         main {
             flex: 1; 
             padding: 40px 5px 5px 10px;
             background-color: white;
-            display: flex; /* Add flexbox for side-by-side layout */
-            justify-content: space-between; /* Ensure columns are spaced out */
+            display: flex;
+            justify-content: space-between; 
             gap: 20px;
         }
 
         .left-column {
-            flex: 2; /* Lebar lebih besar dari right column */
+            flex: 2; 
             padding: 20px;
         }
 
 
         .right-column img {
-    width: 100%; /* Increase width to fill more space */
+    width: 100%; 
     border-radius: 10px;
-    margin-bottom: 0px; /* Reduce bottom margin to zero */
+    margin-bottom: 0px; 
 }
 
 
-        /* Memastikan setiap li berada dalam kolom */
+        /* Memastikan setiap baris ada di dalam kolom*/
         .left-column ul {
             display: flex;
-            flex-direction: column; /* Membuat setiap li berada di dalam kolom */
+            flex-direction: column; /* Membuat setiap baris berada di dalam kolom */
             padding: 0;
         }
 
@@ -110,10 +109,10 @@
             margin-bottom: 10px;
             font-size: 1em;
             background-color: #E9F4FB; /* Background box */
-            padding: 8px; /* Padding inside the box */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-            border: 1px solid #ddd; /* Light border around each li */
+            padding: 8px; /* Padding didalam box */
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow box*/
+            border: 1px solid #ddd; 
         }
 
         /* Footer */
@@ -125,7 +124,7 @@
             font-size: 0.9em;
         }
 
-        /* Responsiveness */
+        /* Responsive */
         .left-column, .right-column {
             flex: 1 1 100%; /* Membuat kolom menjadi satu baris pada perangkat kecil */
             padding: 20px;
@@ -133,7 +132,7 @@
 
         @media (min-width: 768px) {
             .left-column, .right-column {
-                flex: 1; /* Make both columns take equal width on larger screens */
+                flex: 1; 
             }
         }
     </style>
@@ -143,9 +142,9 @@
     <?php include 'header.php'; ?>
 
     <main>
-        <!-- Left Column -->
+        <!-- kolom kiri -->
         <div class="left-column">
-            <!-- Image for left column (add image source) -->
+            <!-- logo  -->
             <img src="path-to-your-left-image.jpg" alt="Tentang SIBTAN" style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
             
             <ul>
@@ -157,7 +156,7 @@
             </ul>
         </div>
 
-        <!-- Right Column -->
+        <!-- kolom kanana -->
         <div class="right-column">
             <img src="../img/gedung.jpg" alt="Gedung SIBTAN" ">
         </div>

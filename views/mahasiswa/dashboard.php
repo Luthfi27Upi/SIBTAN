@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <style>
-    /* Sidebar styling */
+    /* Sidebar */
     .sidebar {
       background: linear-gradient(to bottom, #021a44, #043873, #4fa3ff); 
       color: white;
@@ -18,7 +18,7 @@
       flex-direction: column;
       position: fixed;
       height: 100vh;
-      top: 0; /* ensure sidebar is aligned with the top */
+      top: 0; 
       left: 0;
       padding-top: 0.10px;
     }
@@ -45,7 +45,7 @@
     }
 
     .sidebar-footer {
-      margin-top: auto; /* Push to bottom */
+      margin-top: auto;
       font-size: 0.8rem;
       text-align: center;
       padding: 10px 0;
