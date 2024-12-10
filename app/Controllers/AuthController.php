@@ -75,19 +75,32 @@ class AuthController {
 
             if ($inputOTP === $tempAuth['otp']) {
                 $user = $tempAuth['user'];
+                $jurusan = $this->auth->getJurusan($user['ID']);
+         
+                if ($jurusan === null) {
+                    error_log("Jurusan tidak ditemukan untuk ID: " . $user['ID']);
+                }
+         
                 $_SESSION['user'] = [
                     'nim' => $user['NIM'],
                     'username' => $user['USERNAME'],
                     'role' => $user['ROLE'],
-                    'id' => $user['ID']
+                    'id' => $user['ID'],
+                    'image' => $user['image'],
+                    'email' => $user['EMAIL'],
+                    'no_hp' => $user['NO_HP'],
+                    'alamat' => $user['ALAMAT'],
+                    'jenis_kelamin' => $user['JENIS_KELAMIN'],
+                    'tempat_lahir' => $user['tempat_lahir'],
+                    'tanggal_lahir' => $user['tanggal_lahir'],
+                    'jurusan' => $jurusan,
                 ];
-
+         
                 echo json_encode([
                     "status" => "success",
                     "role" => $user['ROLE'] 
                 ]);
-
-               
+         
                 unset($_SESSION['temp_auth']);
             } else {
                 echo json_encode([
@@ -97,6 +110,7 @@ class AuthController {
             }
         }
     }
+
     public function sendOTPEmail($email,$otp){
         $subject = 'Verifikasi OTP';
         $message1 = "Kode verifikasi OTP Anda adalah: $otp. Silahkan masukkan kode ini ke formulir verifikasi OTP di halaman login.";
