@@ -99,20 +99,29 @@ switch ($path) {
         $controller = new FormController($formModel);
         $controller->renderCards(); 
         break;
+
     case '/users/files/'.$id:
         $controller = new FormController($formModel);
         $controller->renderAdminVerification($id);
+
     case '/users/actionupload':
         $controller = new FormController($formModel);
         echo $controller->create();
         break;
+        
     case '/users/actionreupload':
         $controller = new FormController($formModel);
         echo $controller->update();
         break;
+
     case '/verif':
         $controller = new FormController($formModel);
         echo $controller->verifyForm();
+        break;
+
+    case '/admin/data':
+        $controller = new UserController($userModel);
+        $controller->index();
         break;
     default:
         header("HTTP/1.0 404 Not Found");
