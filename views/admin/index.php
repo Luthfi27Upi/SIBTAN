@@ -8,7 +8,30 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <style>
-    /* Sidebar styling */      
+    /* Sidebar styling */ 
+    h5{
+      margin-top: -20px; /* mengatur jarak logo dan sibtan */
+    }
+
+    header {
+    background-color: #CCE5FF; /* Warna biru muda */
+    text-align: center; 
+    color: #043873; /* Warna teks biru gelap */
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 15px; /* mengatur ruang didalam elemen */
+    border-radius: 40px; /* Sudut melingkar */
+    width: 80%; /* Lebar header agar proporsional */
+    margin-left: 230px;  /*memberi jarak dari sisi kiri */
+    }
+
+    /* Main Content styling */
+    .content {
+      margin-left: 10px; 
+      width: calc(100% - 200px);
+      padding: 20px;
+     
+    }
     .hero-section {
       background: url('../img/RuanganDashboard.png') center/cover no-repeat;
       padding: 100px 20px;

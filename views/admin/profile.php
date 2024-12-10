@@ -78,6 +78,7 @@
   <div class="d-flex flex-grow-1">
     <!-- Sidebar -->
     <?php include 'sidebar.php'; ?>
+  </div>
   <!-- Main Content -->
   <div class="content flex-grow-1">
       <header>
