@@ -94,12 +94,12 @@
     <!-- Main Content -->
     <div class="content">
       <header>
-        <img src="img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
+        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
         <div class="user">Lutfi Triaswangga</div>
       </header>
       <main>
         <div class="title-with-icon">
-          <img src="img/logocallcenter.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
+          <img src="../img/logocallcenter.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
           <h1 class="page-title">INFO CALL CENTER</h1>
         </div>
         <div class="cointainer mt-4">
@@ -110,7 +110,7 @@
                     <p class="text-muted">Show 20 Previous Message</p>
                     <div class="messages">
                     <div class="message-item mb-3 d-flex align-items-start">
-                        <img src="img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
+                        <img src="../img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
                         <div>
                         <div class="fw-bold">Lutfi Triaswangga</div>
                         <small class="text-muted">27 Oktober 2024 20.05</small>
@@ -120,7 +120,7 @@
                     </div>
                     <!-- Salin div .message-item untuk mengulang pesan -->
                     <div class="message-item mb-3 d-flex align-items-start">
-                        <img src="img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
+                        <img src="../img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
                         <div>
                         <div class="fw-bold">Lutfi Triaswangga</div>
                         <small class="text-muted">27 Oktober 2024 20.05</small>
@@ -137,7 +137,7 @@
                 </div>
                 <!-- Bagian gambar -->
                 <div class="col-md-4">
-                    <img src="img/Gedung.jpg" alt="img/Gedung" class="img-fluid rounded">
+                    <img src="../img/Gedung.jpg" alt="../img/Gedung" class="img-fluid rounded">
                 </div>
             </div>
         </div>
