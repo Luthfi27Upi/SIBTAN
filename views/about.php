@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SISTEM BEBAS TANGGUNGAN</title>
     <style>
-        /* Reset and Box Sizing */
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +18,6 @@
             color: #333;
         }
 
-        /* Navbar */
         nav {
             background-color: #0E4088;
             display: flex;
@@ -73,12 +71,11 @@
             background-color: #D3D3D3;
         }
 
-        /* Main Section */
         main {
-            margin-top: 40px; /* Adjust for fixed navbar */
+            margin-top: 40px; 
             padding: 20px;
             display: flex;
-            flex-direction: column; /* Default as column layout */
+            flex-direction: column; 
             gap: 20px;
             margin-bottom: 1px;
         }
@@ -150,7 +147,6 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Footer */
         footer {
             background-color: #0E4088;
             color: white;
@@ -159,7 +155,6 @@
             font-size: 0.9em;
         }
 
-        /* Responsiveness */
         @media (max-width: 768px) {
             .content-section {
                 flex-direction: column;
@@ -172,7 +167,6 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav>
         <div class="logo">
             <img src="../img/designLogo.png" alt="Logo">
@@ -186,15 +180,12 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
     <main>
-        <!-- Title Section -->
         <div class="title-with-icon">
             <img src="../img/call.png" alt="Tentang SIBTAN">
             <h1 class="page-title">Tentang SIBTAN</h1>
         </div>
 
-        <!-- Content Section -->
         <div class="content-section">
             <div class="left-column">
                 <ul>
@@ -237,14 +228,12 @@
                 </ul>
             </div>
 
-            <!-- Right Column -->
             <div class="right-column">
                 <img src="../img/gedung.jpg" alt="Gedung SIBTAN">
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         &copy; 2024 SiBTAN JTI Polinema. 
     </footer>

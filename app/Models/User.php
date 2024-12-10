@@ -6,7 +6,7 @@ class User {
         $this->db = $db;
     }
 
-    // Create a new user
+    // membuat user baru
     public function create($id, $username, $password, $email, $no_hp, $nim, $alamat, $jenis_kelamin, $role, $tempat_lahir, $tanggal_lahir, $image, $jurusan) {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $sql = "INSERT INTO [USER] (id, username, password, email, no_hp, nim, alamat, jenis_kelamin, role, tempat_lahir, tanggal_lahir, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -102,7 +102,7 @@ class User {
         return true;
     }
 
-    // Delete a user
+    // menghapus user
     public function delete($id) {
         $sql = "DELETE FROM data_mhs WHERE id_mhs = ?";
         $params = [$id];
@@ -119,7 +119,7 @@ class User {
         return true;
     }
 
-    // Get all [USER]
+    // mengambil semua data user
     public function getAll() {
         
         $sql = "

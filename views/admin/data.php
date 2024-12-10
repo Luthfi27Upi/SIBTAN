@@ -19,7 +19,7 @@
         <!-- Sidebar -->
         <?php include 'sidebar.php'; ?>
 
-        <!-- Main Content -->
+        <!-- Content -->
         <div class="content flex-grow-1">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <div class="d-flex align-items-center">

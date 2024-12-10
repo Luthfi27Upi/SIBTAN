@@ -24,21 +24,20 @@
             color: white;
         }
         .btn {
-            margin-right: 5px; /* Space between buttons */
+            margin-right: 5px; 
         }
         .card-container {
             margin-top: 20px;
         }
         .dataTables_wrapper {
-            padding: 20px; /* Add padding around the DataTable */
+            padding: 20px; 
         }
     </style>
 </head>
 <body class="d-flex">
-    <!-- Sidebar Import -->
+
     <?php include 'views/mahasiswa/sidebar.php'; ?>
 
-    <!-- Main Content -->
     <div class="content flex-grow-1">
         <h1 class="mb-4">User List</h1>
         <a href="/users/create" class="btn btn-primary mb-3">Create New User</a>
