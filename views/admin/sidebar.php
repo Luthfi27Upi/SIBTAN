@@ -1,4 +1,4 @@
-  <style>
+<style>
     .sidebar {
         background: linear-gradient(to bottom, #021a44, #043873, #4fa3ff); 
         color: white;
@@ -10,6 +10,7 @@
         top: 0;
         left: 0;
         padding-top: 0.10px;
+        position: fixed;
     }
 
     .sidebar .nav-link {
@@ -49,7 +50,7 @@
 
 <nav class="sidebar">
   <div class="text-center py-4">
-    <img src="/img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
+    <img src="../img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
     <h5>SiBTAN</h5>
   </div>
   <ul class="nav flex-column px-2">
@@ -63,7 +64,7 @@
       <a href="tatacara.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'tatacara' ? 'active' : ''; ?>">Tata Cara</a>
     </li>
     <li class="nav-item">
-      <a href="dataku.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'data' ? 'active' : ''; ?>">Data</a>
+      <a href="dataku.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'dataku' ? 'active' : ''; ?>">Dataku</a>
     </li>
     <li class="nav-item">
       <a href="infodata.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'infodata' ? 'active' : ''; ?>">Info Data</a>
