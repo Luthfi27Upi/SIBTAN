@@ -27,7 +27,7 @@ if (is_array($_SESSION['user']['jurusan'])) {
       color: #043873; /* Warna teks biru gelap */
       font-size: 1.5rem;
       font-weight: 500;
-      padding: 15px; /* mengatur ruang didalam elemen */
+      padding: 10px 20px; /* mengatur ruang didalam elemen */
       border-radius: 40px; /* Sudut melingkar */
       width: 95%; /* Lebar header agar proporsional */
 
