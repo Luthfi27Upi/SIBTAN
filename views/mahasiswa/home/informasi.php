@@ -92,7 +92,7 @@
 
         /* Info Section */
         .info-section, .info-section2 {
-            flex: 1 1 48%; /* Berdampingan dengan lebar 48% */
+            flex: 1 1 48%; /* jarak antar box 48% */
             background-color: #E9F4FB;
             padding: 10px;
             border-radius: 10px;
@@ -125,7 +125,7 @@
             font-size: 0.9em;
         }
 
-        /* Layout */
+        /* Layout responsive */
         @media (max-width: 768px) {
             .info-section, .info-section2 {
                 flex: 1 1 100%; /* Satu kolom di layar kecil */

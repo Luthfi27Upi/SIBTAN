@@ -159,21 +159,21 @@
       </div>
     </nav>
 
-    <!-- Content -->
+    <!-- content -->
     <div class="content">
-      <!-- Header -->
+      <!-- header -->
       <header>
         <img src="../img/logouser.jpg" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
         <div class="user">Lutfi Triaswangga</div>
       </header>
 
-      <!-- Page Title -->
+      <!-- Judul -->
       <div class="title-with-icon">
         <img src="../img/logoinfodata.jpg" alt="Call Center" style="width: 40px; height: 40px;">
         <h1 class="page-title">INFO DATA</h1>
       </div>
 
-      <!-- Info Call Center Section -->
+      <!-- Info Call Center -->
       <div class="cointainer mt-4">
         <div class="row">
           <div class="col-md-8">
@@ -206,7 +206,7 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
+  <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

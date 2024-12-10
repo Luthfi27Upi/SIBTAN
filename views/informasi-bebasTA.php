@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SISTEM BEBAS TANGGUNGAN</title>
     <style>
-        /* Default */
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +21,6 @@
             min-height: 100vh; 
         }
 
-        /* Navbar */
         nav {
             background-color: #0E4088;
             display: flex;
@@ -75,14 +73,12 @@
             background-color: #D3D3D3;
         }
 
-        /* Main */
         main {
             flex: 1; 
             padding: 85px 10px 10px 10px;
             background-color: white;
         }
 
-        /* Info Container */
         .info-container {
             display: flex;
             justify-content: space-between;
@@ -90,9 +86,8 @@
             gap: 20px;
         }
 
-        /* Info Section */
         .info-section, .info-section2 {
-            flex: 1 1 48%; /* Berdampingan dengan lebar 48% */
+            flex: 1 1 48%; 
             background-color: #E9F4FB;
             padding: 10px;
             border-radius: 10px;
@@ -116,7 +111,6 @@
             font-size: 0.8em; 
         }
 
-        /* Footer */
         footer {
             background-color: #0E4088;
             color: white;
@@ -125,16 +119,15 @@
             font-size: 0.9em;
         }
 
-        /* Layout */
         @media (max-width: 768px) {
             .info-section, .info-section2 {
-                flex: 1 1 100%; /* Satu kolom di layar kecil */
+                flex: 1 1 100%; 
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+
     <nav>
         <div class="logo">
             <img src="../img/designLogo.png" alt="Logo">
