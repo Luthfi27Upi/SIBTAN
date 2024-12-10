@@ -3,10 +3,10 @@ class Cetak {
     private $db;
 
     public function __construct($db) {
-        $this->db = $db; // $db should be the resource returned from sqlsrv_connect()
+        $this->db = $db; // mengkonekkan mongoDB
     }
 
-    // Method to get mahasiswa data by ID
+   //mengambil query
     public function getMahasiswaById($userId) {
         $query = "
             SELECT
@@ -20,24 +20,24 @@ class Cetak {
             WHERE m.ID_MHS = ?
         ";
         
-        // Prepare statement
+        
         $stmt = sqlsrv_prepare($this->db, $query, [$userId]);
 
         if ($stmt === false) {
             die(print_r(sqlsrv_errors(), true));  // Handle errors if preparation fails
         }
 
-        // Execute query
+        // mengexecute query
         $result = sqlsrv_execute($stmt);
 
         if ($result === false) {
             die(print_r(sqlsrv_errors(), true));  // Handle errors if execution fails
         }
 
-        // Fetch the result
+        //hasil
         $data = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
         
-        return $data;  // Return the associative array
+        return $data;  
     }
 }
 ?>

@@ -79,7 +79,7 @@
                     <td>
                         Tanggal :
                         <?php 
-                        $tanggalHariIni = date('l, d F Y'); // Menampilkan hari, tanggal, bulan, dan tahun
+                        $tanggalHariIni = date('l, d F Y'); 
                         echo $tanggalHariIni; ?>
                     </td>
                     <td><input type="checkbox" checked></td>
@@ -114,7 +114,7 @@
                     <td>
                         Tanggal :
                         <?php 
-                        $tanggalHariIni = date('l, d F Y'); // Menampilkan hari, tanggal, bulan, dan tahun
+                        $tanggalHariIni = date('l, d F Y'); 
                         echo $tanggalHariIni; ?>
                         </td>
                     <td><input type="checkbox" checked></td>
@@ -141,7 +141,7 @@
         </div>
 
         <p>Malang,<?php 
-                        $tanggalHariIni = date('l, d F Y'); // Menampilkan hari, tanggal, bulan, dan tahun
+                        $tanggalHariIni = date('l, d F Y'); 
                         echo $tanggalHariIni; ?></p>
         <p>Ketua Jurusan Teknologi Informasi</p>
         <p>Dr. Eng. Rosa Andrie Asmara, S.T., M.T.</p>

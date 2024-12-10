@@ -20,7 +20,7 @@ class CetakController
             throw new Exception('User tidak ditemukan: id tidak valid');
         }
 
-        // Get mahasiswa data from the model
+        // mengambambil data mahasiswa dari form model
         $dataMahasiswa = $this->cetakModel->getMahasiswaById($userId);
 
         // Cek apakah data mahasiswa ditemukan
@@ -28,7 +28,6 @@ class CetakController
             throw new Exception('Data mahasiswa tidak ditemukan');
         }
 
-        // Menyusun array mahasiswa dengan fungsi htmlspecialchars untuk keamanan
         $mahasiswa = [
             'id' => htmlspecialchars($dataMahasiswa['ID_MHS']),
             'username' => htmlspecialchars($dataMahasiswa['USERNAME']),
@@ -37,10 +36,10 @@ class CetakController
             'email' => htmlspecialchars($dataMahasiswa['EMAIL'])
         ];
 
-        // Include the view file
+        //memindahkan ke form cetak
         include 'views/mahasiswa/cetak.php';
 
-        // Return the mahasiswa data
+        // Return mahasiswa data
         return $mahasiswa;
     }
 }
