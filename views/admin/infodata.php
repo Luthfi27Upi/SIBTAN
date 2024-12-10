@@ -27,7 +27,7 @@
       color: #2b74c4;
     }
 
-    /* Content Styling */
+    /* Content  */
     .content {
       margin-left: 200px;
       flex-grow: 1;
@@ -69,7 +69,6 @@
     <!-- Sidebar -->
     <?php include 'sidebar.php'; ?>
 
-    <!-- Main Content -->
     <div class="content">
       <header>
         <img src="../img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">

@@ -3,7 +3,7 @@ class Cetak {
     private $db;
 
     public function __construct($db) {
-        $this->db = $db; // mengkonekkan mongoDB
+        $this->db = $db; // mengkonekkan sql
     }
 
    //mengambil query
@@ -24,14 +24,14 @@ class Cetak {
         $stmt = sqlsrv_prepare($this->db, $query, [$userId]);
 
         if ($stmt === false) {
-            die(print_r(sqlsrv_errors(), true));  // Handle errors if preparation fails
+            die(print_r(sqlsrv_errors(), true));  
         }
 
         // mengexecute query
         $result = sqlsrv_execute($stmt);
 
         if ($result === false) {
-            die(print_r(sqlsrv_errors(), true));  // Handle errors if execution fails
+            die(print_r(sqlsrv_errors(), true));  
         }
 
         //hasil

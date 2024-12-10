@@ -17,10 +17,39 @@
     <!-- Sidebar -->
     <?php include 'sidebar.php'; ?>
 
-    <!-- Main Content -->
+    <!-- Content -->
     <div class="content flex-grow-1">
       <div class="card-section container mt-5">
         <div class="row">
+
+         <!-- Tombol Cetak Form -->
+         <?php 
+          $allAcc = true; // di asumsikan jika awal semua file berstatus ACC
+          foreach ($cardStatuses as $card) {
+            if ($card['status'] !== 'ACC') {
+              $allAcc = false; // Jika ada satu file yang statusnya bukan ACC, maka $allAcc = false
+              break; // maka keluar dari loop lebih cepat
+            }
+          }
+        ?>
+        <div class="col-12 mb-4 text-end">
+        <a 
+        href="/cetak" 
+        class="btn-cetak"
+        style="
+        display: inline-block;
+        padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #007bff; 
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none; "
+        >Cetak Form</a>
+        </div>
+          
 
           <!-- Card Template -->
           <?php foreach ($cardStatuses as $card): ?>
@@ -152,7 +181,19 @@
       $(document).ready(function () {
         $("#sidebar-container").load("sidebar.html");
       });
+
+      document.addEventListener('DOMContentLoaded', () => {
+    const btnCetakForm = document.getElementById('btnCetakForm');
+   
+   if (!btnCetakForm.disabled) {
+     btnCetakForm.addEventListener('click', function () {
+       window.print();
+     });
+   }
+});
+
     </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
