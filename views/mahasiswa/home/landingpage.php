@@ -74,23 +74,7 @@
     </style>
 </head>
 <body>
-    <nav>
-    <div class="logo">
-    <img src="../img/designLogo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
-    SIBTAN
-</div>
-
-        <ul>
-            <li>
-                <a href="home" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'home' ? 'active' : ''; ?>">Home</a>
-            </li>
-            <li>
-                <a href="informasi" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'informasi' ? 'active' : ''; ?>">Informasi</a>
-            </li>
-            <li><a href="#" class="nav-link ">Menu</a></li>
-            <li><a href="#" class="nav-link ">About</a></li>
-        </ul>
-    </nav>
+    <?php include 'header.php'; ?>
     
     <header>
         <div class="container">
