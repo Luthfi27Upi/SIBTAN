@@ -5,6 +5,7 @@ define('BASE_PATH', __DIR__);
 require_once BASE_PATH . '/config/database.php';
 require_once BASE_PATH . '/app/Models/Auth.php';
 require_once BASE_PATH . '/app/Controllers/AuthController.php';
+require_once BASE_PATH . '/app/Controllers/HomepageController.php';
 require_once BASE_PATH . '/app/Controllers/PasswordResetController.php';
 require_once BASE_PATH . '/app/Controllers/UserController.php';
 require_once BASE_PATH . '/app/Controllers/FormController.php';
@@ -78,6 +79,46 @@ switch ($path) {
         $controller->index();
         break;
 
+    case '/home':
+        $controller = new HomepageController();
+        $controller->index();
+        break;
+
+    case '/informasi':
+        $controller = new HomepageController();
+        $controller->informasi();
+        break;
+
+    case '/about':
+        $controller = new HomepageController();
+        $controller->about();
+        break;
+
+    case '/users/home':
+        $controller = new HomepageController();
+        $controller->home();
+        break;
+
+    case '/users/profile':
+        $controller = new HomepageController();
+        $controller->profile();
+        break;
+
+    case '/users/tatacara':
+        $controller = new HomepageController();
+        $controller->tatacara();
+        break;
+
+    case '/users/infodata':
+        $controller = new HomepageController();
+        $controller->infodata();
+        break;
+
+    case '/users/callcenter':
+        $controller = new HomepageController();
+        $controller->callcenter();
+        break;
+
     case '/users/create':
         $controller = new UserController($userModel);
         $controller->create();
@@ -103,6 +144,16 @@ switch ($path) {
         $controller->renderCards(); 
         break;
 
+    case '/users/logout':
+        $controller = new AuthController($authModel);
+        $controller->logout();
+        break;
+
+    case '/cetak':
+        $controller = new FormController($formModel);
+        $controller->cetak();
+        break;
+
     case '/users/files/'.$id:
         $controller = new FormController($formModel);
         $controller->renderAdminVerification($id);
@@ -122,10 +173,11 @@ switch ($path) {
         echo $controller->verifyForm();
         break;
 
-    case '/admin/data':
+    case '/users/data':
         $controller = new UserController($userModel);
-        $controller->index();
+        echo $controller->index();
         break;
+
     default:
         header("HTTP/1.0 404 Not Found");
         echo "404 Not Found - Path: " . $path;

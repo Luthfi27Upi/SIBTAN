@@ -8,37 +8,33 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <style>
-    /* Sidebar styling */
-    h5{
-      margin-top: -20px; /* mengatur jarak logo dan sibtan */
-    }
-
+    /* Header */
     header {
       display: flex;
       justify-content: flex-end;
       align-items: center;
       padding: 10px 20px;
       background-color: #CCE5FF;
-      
+      border-radius: 30px;
     }
 
     header .user {
       font-weight: bold;
-      color: #2b74c4;
+      color: #2B74C4;
+      margin-left: 10px;
     }
 
-    /* Content Styling */
+    /* Main Content */
     .content {
-      margin-left: 200px;
-      flex-grow: 1;
+      margin-left: 220px;
+      padding: 20px;
     }
 
     .title-with-icon {
       display: flex;
       align-items: center;
-      gap: 10px; /* Jarak antara gambar dan teks */
+      gap: 20px;
       margin-top: 20px;
-      margin-left: 80px;
     }
 
     .page-title {
@@ -47,41 +43,96 @@
       font-size: 26px;
     }
 
-    .info {
-      background: #F5F5F5;
-      padding: 20px 30px;
-      border-radius: 10px;
-      margin-top: 20px;
-      margin-left: 80px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      color: #043873;
-      max-width: 1050px;
+    .cointainer img {
+      width: 100%;
+      border-radius: 8px;
     }
 
-    .info li {
+    .cointainer {
+      margin-top: 20px;
+    }
+
+    /* Call Center Info */
+    .info-section {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+
+    .info-section p {
+      color: #043873;
+      font-size: 14px;
+    }
+
+    /* Scrollable Messages */
+    .messages-container {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .message-item {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
       margin-bottom: 10px;
     }
 
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100px;
+      }
+      .content {
+        margin-left: 100px;
+      }
+      .page-title {
+        font-size: 20px;
+      }
+    }
   </style>
 </head>
-<body class="d-flex flex-column min-vh-100">
-  <div class="d-flex flex-grow-1">
+
+<body>
+  <div class="d-flex">
     <!-- Sidebar -->
     <?php include 'sidebar.php'; ?>
 
     <!-- Main Content -->
     <div class="content">
+      <!-- Header -->
       <header>
-        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
+main
+        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
+        <div class="user">Lutfi Triaswangga</div>
+      </header>
+
+      <!-- Page Title -->
+      <div class="title-with-icon">
+        <img src="../img/logoinfodata.jpg" alt="Call Center" style="width: 40px; height: 40px;">
+        <h1 class="page-title">INFO DATA</h1>
+      </div>
+
+      <!-- Info Call Center Section -->
+      <div class="cointainer mt-4">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="info-section">
+            <ol>
+
+        <img src="../../resources/img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
         <div class="user">Lutfi Triaswangga</div>
       </header>
       <main>
         <div class="title-with-icon">
-          <img src="../img/logoinfodata.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
+          <img src="../../resources/img/logoinfodata.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
           <h1 class="page-title">INFO DATA</h1>
         </div>
         <div class="info">
           <ol>
+ main
             <li>Berkas yang akan di-upload sudah mendapat ACC dari dosen atau admin terkait.</li>
             <li>Persiapkan berkas yang akan di-upload dan pastikan sudah benar.</li>
             <li>Scan file dengan format PDF/PNG dan pastikan gambar sudah jelas.</li>
@@ -96,8 +147,14 @@
             <li>Untuk upload scan TOEIC dengan skor minimal 450 untuk Diploma 4. Apabila sudah mengikuti 1x tes gratis Polinema dan 1x ujian mandiri berbayar namun nilai masih kurang,
               maka akan diberikan surat keterangan dari UPA Bahasa (Grapol Lantai 3).</li>
           </ol>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <img src="../img/gedung.jpg" alt="Gedung" class="img-fluid rounded">
+          </div>
         </div>
-      </main>
+      </div>
     </div>
   </div>
 
