@@ -24,7 +24,7 @@
 
         /* Navbar */
         nav {
-          background-color: #0E4088;
+            background-color: #0E4088;
             display: flex;
             justify-content: space-between;
             align-items: center;
