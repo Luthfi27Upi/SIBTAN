@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,6 +49,7 @@
         }
     </style>
 </head>
+
 <body class="d-flex flex-column min-vh-100">
     <header>
         Edit User
@@ -58,19 +59,8 @@
         <form method="POST" action="" enctype="multipart/form-data">
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="ID" class="form-label">ID:</label>
-                    <input type="text" class="form-control" id="ID" name="ID" placeholder="Enter ID" value="<?php echo htmlspecialchars($user['ID']); ?>" required>
-                </div>
-                <div class="col-md-6">
                     <label for="USERNAME" class="form-label">Username:</label>
                     <input type="text" class="form-control" id="USERNAME" name="USERNAME" placeholder="Enter Username" required value="<?php echo htmlspecialchars($user['USERNAME']); ?>">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="PASSWORD" class="form-label">Password:</label>
-                    <input type="password" class="form-control" id="PASSWORD" name="PASSWORD" placeholder="Enter Password" required >
                 </div>
                 <div class="col-md-6">
                     <label for="EMAIL" class="form-label">Email:</label>
@@ -80,8 +70,8 @@
 
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="NO_HP" class="form-label">NO Telepon:</label>
-                    <input type="text" class="form-control" id="NO_HP" name="NO_HP" placeholder="Enter Phone Number">
+                    <label for="NO_HP" class="form-label">No Telepon:</label>
+                    <input type="text" class="form-control" id="NO_HP" name="NO_HP" placeholder="Enter Phone Number" required value="<?php echo htmlspecialchars($user['NO_HP']); ?>">
                 </div>
                 <div class="col-md-6">
                     <label for="NIM" class="form-label">NIM:</label>
@@ -92,7 +82,7 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="ALAMAT" class="form-label">Alamat:</label>
-                    <input type="text" class="form-control" id="ALAMAT" name="ALAMAT" placeholder="Enter Address"value="<?php echo htmlspecialchars($user['ALAMAT']); ?>">
+                    <input type="text" class="form-control" id="ALAMAT" name="ALAMAT" placeholder="Enter Address" value="<?php echo htmlspecialchars($user['ALAMAT']); ?>">
                 </div>
                 <div class="col-md-6">
                     <label for="JENIS_KELAMIN" class="form-label">Jenis Kelamin:</label>
@@ -106,10 +96,10 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="ROLE" class="form-label">Role:</label>
-                    <select class="form-select" id="ROLE" name="ROLE">
-                        <option value="admin_jurusan">Admin Jurusan</option>
-                        <option value="admin_prodi">Admin Prodi</option>
-                        <option value="mahasiswa">Mahasiswa</option>
+                    <select name="ROLE" class="form-select">
+                        <option value="admin_jurusan" <?php echo $user['ROLE'] == 'admin_jurusan' ? 'selected' : ''; ?>>Admin Jurusan</option>
+                        <option value="admin_prodi" <?php echo $user['ROLE'] == 'admin_prodi' ? 'selected' : ''; ?>>Admin Prodi</option>
+                        <option value="mahasiswa" <?php echo $user['ROLE'] == 'mahasiswa' ? 'selected' : ''; ?>>Mahasiswa</option>
                     </select>
                 </div>
                 <div class="col-md-6">
@@ -121,17 +111,17 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="tempat_lahir" class="form-label">Tempat Lahir:</label>
-                    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" placeholder="Enter Place of Birth"value="<?php echo htmlspecialchars($user['tempat_lahir']); ?>">
+                    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" placeholder="Enter Place of Birth" value="<?php echo htmlspecialchars($user['tempat_lahir']); ?>">
                 </div>
                 <div class="col-md-6">
-                    <label for="tanggal_lahir" class="form-label">Tempat Lahir:</label>
+                    <label for="tanggal_lahir" class="form-label">Tanggal Lahir:</label>
                     <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir">
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="jurusan" class="form-label">Jurusan:</label>
-                <input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="Enter Department">
+                <input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="Enter Jurusan">
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Edit User</button>
@@ -141,4 +131,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
