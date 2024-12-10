@@ -9,13 +9,16 @@ require_once BASE_PATH . '/app/Controllers/HomepageController.php';
 require_once BASE_PATH . '/app/Controllers/PasswordResetController.php';
 require_once BASE_PATH . '/app/Controllers/UserController.php';
 require_once BASE_PATH . '/app/Controllers/FormController.php';
+require_once BASE_PATH . '/app/Controllers/CetakController.php';
 require_once BASE_PATH . '/app/Models/User.php';
 require_once BASE_PATH . '/app/Models/Form.php';
+require_once BASE_PATH . '/app/Models/Cetak.php';
 
 $db = Database::getInstance()->getConnection();
 $authModel = new Auth($db);
 $userModel = new User($db);
 $formModel = new Form($db);
+$cetakModel = new Cetak($db);
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -179,4 +182,10 @@ switch ($path) {
         header("HTTP/1.0 404 Not Found");
         echo "404 Not Found - Path: " . $path;
         break;
-}
+
+    case '/cetak';
+        $controller = new CetakController($cetakModel);
+        $mahasiswa=$controller->renderCards(); 
+        
+        break;
+}        

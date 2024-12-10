@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SISTEM BEBAS TANGGUNGAN</title>
     <style>
-        /* Default */
+        /* Reset and Box Sizing */
         * {
             margin: 0;
             padding: 0;
@@ -13,13 +13,10 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
             background-color: #f4f4f4;
             color: #333;
-            display: flex; 
-            flex-direction: column;
-            min-height: 100vh; 
         }
 
         /* Navbar */
@@ -76,44 +73,81 @@
             background-color: #D3D3D3;
         }
 
-        /* Main */
+        /* Main Section */
         main {
-            flex: 1; 
-            padding: 40px 5px 5px 10px;
-            background-color: white;
-            display: flex; /* Add flexbox for side-by-side layout */
-            justify-content: space-between; /* Ensure columns are spaced out */
+            margin-top: 40px; /* Adjust for fixed navbar */
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Default as column layout */
+            gap: 20px;
+            margin-bottom: 1px;
+        }
+
+        .title-with-icon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1px;
+        }
+
+        .title-with-icon img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .title-with-icon h1 {
+            font-size: 1.3em;
+            color: #0E4088;
+        }
+
+        .content-section {
+            display: flex;
+            justify-content: space-between;
             gap: 20px;
         }
 
         .left-column {
-            flex: 2; /* Lebar lebih besar dari right column */
+            flex: 1;
             padding: 20px;
+            margin-bottom: 20px;
         }
 
-
-        .right-column img {
-    width: 100%; /* Increase width to fill more space */
-    border-radius: 10px;
-    margin-bottom: 0px; /* Reduce bottom margin to zero */
-}
-
-
-        /* Memastikan setiap li berada dalam kolom */
         .left-column ul {
-            display: flex;
-            flex-direction: column; /* Membuat setiap li berada di dalam kolom */
-            padding: 0;
+            list-style: none;
         }
 
         .left-column ul li {
             margin-bottom: 10px;
+            color: #0E4088;
             font-size: 1em;
-            background-color: #E9F4FB; /* Background box */
-            padding: 8px; /* Padding inside the box */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-            border: 1px solid #ddd; /* Light border around each li */
+            padding: 5px 15px 1px 15px;
+            background-color:#D3E7FD;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .left-column ul li:hover {
+            transform: translateY(-3px);
+            background-color: #D3E8F5;
+        }
+        .description {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #F0F8FF;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .right-column {
+            flex: 1;
+        }
+
+        .right-column img {
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Footer */
@@ -126,14 +160,13 @@
         }
 
         /* Responsiveness */
-        .left-column, .right-column {
-            flex: 1 1 100%; /* Membuat kolom menjadi satu baris pada perangkat kecil */
-            padding: 20px;
-        }
+        @media (max-width: 768px) {
+            .content-section {
+                flex-direction: column;
+            }
 
-        @media (min-width: 768px) {
             .left-column, .right-column {
-                flex: 1; /* Make both columns take equal width on larger screens */
+                flex: 1;
             }
         }
     </style>
@@ -153,29 +186,73 @@
         </ul>
     </nav>
 
+    <!-- Main Content -->
     <main>
-        <!-- Left Column -->
-        <div class="left-column">
-            <!-- Image for left column (add image source) -->
-            <img src="path-to-your-left-image.jpg" alt="Tentang SIBTAN" style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-            
-            <ul>
-                <li>Pendahuluan</li>
-                <li>Tujuan dan Manfaat</li>
-                <li>Ketentuan Umum dan Khusus</li>
-                <li>Info Data</li>
-                <li>Call Center</li>
-            </ul>
+        <!-- Title Section -->
+        <div class="title-with-icon">
+            <img src="../img/call.png" alt="Tentang SIBTAN">
+            <h1 class="page-title">Tentang SIBTAN</h1>
         </div>
 
-        <!-- Right Column -->
-        <div class="right-column">
-            <img src="../img/gedung.jpg" alt="Gedung SIBTAN" ">
+        <!-- Content Section -->
+        <div class="content-section">
+            <div class="left-column">
+                <ul>
+                    <li onclick="toggleDescription('pendahuluan')">Pendahuluan</li>
+                    <div id="pendahuluan" class="description">
+                        Sistem informasi bebas tanggungan tugas akhir dirancang untuk pengolahan data validasi bebas tanggungan secara online.
+                    </div>
+
+                    <li onclick="toggleDescription('tujuan')">Tujuan</li>
+                    <div id="tujuan" class="description">
+                        <p>Memudahkan admin prodi dan jurusan untuk verifikasi dokumen mahasiswa akhir.</p>
+                        <p>Mempermudah pengurusan surat bebas tanggungan bagi mahasiswa yang berada di luar kota.</p>
+                    </div>
+
+                    <li onclick="toggleDescription('ketentuan')">Ketentuan </li>
+                    <div id="ketentuan" class="description">
+                        <p>- Diwajibkan mengunggah foto formal pada masing-masing akun.</p>
+                        <p>- Diberitahukan kepada seluruh mahasiswa bahwa data syarat untuk pengajuan surat bebas tanggungan dapat diunggah di website SiBTAN adalah daftar kegiatan yang diikuti selama masa studi di Politeknik Negeri Malang.</p>
+                        <p>- Pertanyaan lebih lanjut dapat menghubungi call center pada website SiBeTa.</p>
+                        <p>- Untuk upload Scan TOEIC dengan skor minimal 450 untuk Diploma.</p>
+                        <p>- Apabila sudah mengikuti 1x tes gratis Polinema dan 1x ujian mandiri berbayar, namun nilai masih kurang, maka akan diberikan surat keterangan dari UPA Bahasa (Grapol Lantai 3).</p>
+                    </div>
+
+                    <li onclick="toggleDescription('info')">Info Data</li>
+                    <div id="info" class="description">
+                        <p>- Persiapkan berkas yang akan di-upload dan pastikan sudah benar.</p>
+                        <p>- Scan file dengan format PDF/PNG dan pastikan gambar sudah jelas.</p>
+                        <p>- Ukuran file maksimal 3MB.</p>
+                        <p>- Pastikan file sudah terunggah dengan sukses.</p>
+                        <p>- Setelah file sukses terunggah, semua file akan diverifikasi oleh admin. Untuk verifikasi akan membutuhkan waktu lebih lama.</p>
+                        <p>- Mohon untuk aktif mengecek website SiBTAN setelah melakukan upload dokumen.</p>
+                    </div>
+
+                    <li onclick="toggleDescription('call')">Call-Center</li>
+                    <div id="call" class="description">
+                        <p>Hubungi call center kami di:</p>
+                        <p><strong>Telepon:</strong> 0800-123-4567</p>
+                        <p><strong>Email:</strong> support@sibtan.ac.id</p>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <img src="../img/gedung.jpg" alt="Gedung SIBTAN">
+            </div>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 SiBTAN JTI Polinema.</p>
+        &copy; 2024 SiBTAN JTI Polinema. 
     </footer>
+    <script>
+        function toggleDescription(id) {
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === "none" || element.style.display === "" ? "block" : "none";
+        }
+    </script>
 </body>
 </html>
