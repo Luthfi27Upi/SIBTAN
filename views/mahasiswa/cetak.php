@@ -39,15 +39,11 @@
             padding: 10px;
             text-align: left;
         }
-        .header {
-            display: flex;
-            align-items: center; 
-            margin-bottom: 20px;
+        .table input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
         }
-        .header img {
-            width: 100px;
-            margin-right: 20px; 
-        }
+        
     </style>
 </head>
 <body>
@@ -55,19 +51,17 @@
     <div class="header">
         <img src="logo.png" alt="Logo"> 
         <h1 style="text-align: center">KEMENTERIAN PENDIDIKAN, KEBUDAYAAN, Riset, dan Teknologi</h1>
-        </div>
+    </div>
 
-        
-        <h2 style="text-align: center">JURUSAN TEKNOLOGI INFORMASI</h2>
-        <h2 style="text-align: center">Politeknik Negeri Malang</h2>
-        <p></p>
+    <h2 style="text-align: center">JURUSAN TEKNOLOGI INFORMASI</h2>
+    <h2 style="text-align: center">Politeknik Negeri Malang</h2>
     
     <div class="content">
         <div class="section">
             <h2 style="text-align:center;">BEBAS TANGGUNGAN JURUSAN</h2>
-            <p>Nama: Siti Zumaron Dian Febrianti</p>
-            <p>NIM: 2041720058</p>
-            <p>Program Studi: D-IV Teknik Informatika</p>
+            <p>Nama: <?php echo htmlspecialchars($mahasiswa['username'] ?? 'Tidak Ditemukan'); ?></p>
+            <p>NIM: <?php echo htmlspecialchars($mahasiswa['nim'] ?? 'Tidak Ditemukan'); ?></p>
+            <p>Program Studi: <?php echo htmlspecialchars($mahasiswa['jurusan'] ?? 'Tidak Ditemukan'); ?></p>
         </div>
 
         <div class="section">
@@ -77,21 +71,30 @@
                     <th>No.</th>
                     <th>SUB BAGIAN</th>
                     <th>PENANGGUNG JAWAB</th>
+                    <th>CHECKLIST</th>
                 </tr>
                 <tr>
                     <td>1</td>
                     <td>Ahl/Program/Apikasi</td>
-                    <td>Tanggal :</td>
+                    <td>
+                        Tanggal :
+                        <?php 
+                        $tanggalHariIni = date('l, d F Y'); 
+                        echo $tanggalHariIni; ?>
+                    </td>
+                    <td><input type="checkbox" checked></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Laporan</td>
                     <td>Anggi Petra W.P., A.Md.</td>
+                    <td><input type="checkbox" checked></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Penyampaian Publikasi</td>
                     <td>TTD :</td>
+                    <td><input type="checkbox" checked></td>
                 </tr>
             </table>
         </div>
@@ -103,35 +106,46 @@
                     <th>No.</th>
                     <th>SUB BAGIAN</th>
                     <th>PENANGGUNG JAWAB</th>
+                    <th>CHECKLIST</th>
                 </tr>
                 <tr>
                     <td>1</td>
                     <td>Distribusi Laporan Skripsi</td>
-                    <td>Tanggal :</td>
+                    <td>
+                        Tanggal :
+                        <?php 
+                        $tanggalHariIni = date('l, d F Y'); 
+                        echo $tanggalHariIni; ?>
+                        </td>
+                    <td><input type="checkbox" checked></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Distribusi Laporan Menggeng</td>
                     <td>Sri Warhiyati, S.S.</td>
+                    <td><input type="checkbox" checked></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Bebas Kompensasi</td>
                     <td>TTD :</td>
+                    <td><input type="checkbox" checked></td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Scan TOEIC</td>
                     <td></td>
+                    <td><input type="checkbox" checked></td>
                 </tr>
             </table>
         </div>
 
-        <p>Malang,</p>
+        <p>Malang,<?php 
+                        $tanggalHariIni = date('l, d F Y'); 
+                        echo $tanggalHariIni; ?></p>
         <p>Ketua Jurusan Teknologi Informasi</p>
         <p>Dr. Eng. Rosa Andrie Asmara, S.T., M.T.</p>
         <p>NIP: 198010102005011001</p>
     </div>
-
 </body>
 </html>
