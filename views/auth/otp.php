@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Verifikasi OTP</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="../resources/css/otp.css">
+    <link rel="stylesheet" href="/resources/css/otp.css">
 </head>
 <body>
   <div class="otp-container">
