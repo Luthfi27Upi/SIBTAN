@@ -6,14 +6,12 @@
     <title>SISTEM BEBAS TANGGUNGAN</title>
     <link rel="stylesheet" href="../resources/css/header.css">
     <style>
-        /* STyle Default */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body */
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
@@ -22,7 +20,6 @@
         }
 
 
-        /* Header*/
         header {
             background: url('../img/RuanganDashboard.png') no-repeat center center;
             background-size: cover;
@@ -42,7 +39,6 @@
             font-weight: bold;
         }
 
-        /* Content */
         .content {
             padding: 27px 0;
             background-color: white;
@@ -62,7 +58,6 @@
 
         }
 
-        /* Footer */
         footer {
             background-color: #0E4088;
             color: white;
@@ -71,7 +66,6 @@
             font-size: 0.8em;
         }
 
-        /* Container */
         .container {
             width: 90%;
             max-width: 1200px;
@@ -80,7 +74,6 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav>
     <div class="logo">
     <img src="../img/designLogo.png" alt="Logo" style="height: 40px; margin-right: 10px;">

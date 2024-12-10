@@ -63,7 +63,7 @@
   }
   
 
-    /* Main Content styling */
+    /* Main Content */
     .content {
       margin-left: 10px; 
       width: calc(100% - 200px);

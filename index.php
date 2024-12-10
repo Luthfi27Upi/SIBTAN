@@ -148,12 +148,6 @@ switch ($path) {
         $controller = new AuthController($authModel);
         $controller->logout();
         break;
-
-    case '/cetak':
-        $controller = new FormController($formModel);
-        $controller->cetak();
-        break;
-
     case '/users/files/'.$id:
         $controller = new FormController($formModel);
         $controller->renderAdminVerification($id);
