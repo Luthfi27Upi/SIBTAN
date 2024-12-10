@@ -6,19 +6,19 @@
     <title>SISTEM BEBAS TANGGUNGAN</title>
     <link rel="stylesheet" href="../resources/css/header.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        html, body {
+            height: 100%; 
+            margin: 0; 
         }
 
         body {
+            display: flex;
+            flex-direction: column; 
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             background-color: #0E4088;
             color: #333;
         }
-
 
         header {
             background: url('../img/RuanganDashboard.png') no-repeat center center;
@@ -32,16 +32,20 @@
         header h1 {
             font-size: 3.5em;
             margin-bottom: 10px;
+            color: #FFE492;
         }
 
         header p {
             font-size: 1.5em;
             font-weight: bold;
+            color: #FFE492;
         }
 
         .content {
+            flex: 1;
             padding: 27px 0;
             background-color: white;
+            margin-top: auto;
         }
 
         .content h4 {
@@ -55,13 +59,11 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: justify;
-
         }
 
         footer {
             background-color: #0E4088;
             color: white;
-            padding: 10px 5px;
             text-align: center;
             font-size: 0.8em;
         }
@@ -83,18 +85,15 @@
         </div>
     </header>
 
-    <section class="content">
+    <main class="content">
         <div class="container">
             <h4>Profil Sistem Bebas Tanggungan</h4>
-            <p>Sistem informasi bebas tanggungan tugas akhir adalah sistem yang dirancang untuk melakukan pengolahan data validasi bebas tanggungan melalui software sehingga proses kegiatan validasi surat dapat dikelola dengan baik sehingga menjadi informasi yang bermanfaat untuk manajemen perguruan tinggi dan pengambilan surat untuk mahasiswa akhir.
-</p>
+            <p>Sistem informasi bebas tanggungan tugas akhir adalah sistem yang dirancang untuk melakukan pengolahan data validasi bebas tanggungan melalui software sehingga proses kegiatan validasi surat dapat dikelola dengan baik sehingga menjadi informasi yang bermanfaat untuk manajemen perguruan tinggi dan pengambilan surat untuk mahasiswa akhir.</p>
         </div>
-    </section>
+    </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 SiBTAN JTI Polinema.</p>
-        </div>
+        <p>&copy; 2024 SiBTAN JTI Polinema.</p>
     </footer>
 </body>
 </html>

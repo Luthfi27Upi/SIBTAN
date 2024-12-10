@@ -143,11 +143,6 @@ switch ($path) {
         $controller = new FormController($formModel);
         $controller->renderCards(); 
         break;
-
-    case '/users/logout':
-        $controller = new AuthController($authModel);
-        $controller->logout();
-        break;
     case '/users/files/'.$id:
         $controller = new FormController($formModel);
         $controller->renderAdminVerification($id);
