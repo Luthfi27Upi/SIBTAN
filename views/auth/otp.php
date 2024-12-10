@@ -23,7 +23,7 @@
           </form>
         </div>
         <div class="otp-image">
-          <img src="img/building.jpg" alt="Campus Building">
+          <img src="/resources/img/gedunglogin.jpg" alt="Campus Building">
         </div>
       </div>
     </div>
@@ -54,11 +54,11 @@
                         } else if (jsonResponse.status === "success") {
                             var userRole = jsonResponse.role; 
                             if (userRole === 'admin_jurusan') {
-                                window.location.href = '../dashboardAdminJurusan.php'; 
+                                window.location.href = 'index'; 
                             } else if (userRole === 'admin_prodi') {
                                 window.location.href = '../dashboardAdminProdi.php'; 
                             } else {
-                                window.location.href = '../dashboard.php'; 
+                                window.location.href = '/home'; 
                             }
                         }
                     },
