@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SISTEM BEBAS TANGGUNGAN</title>
+    <link rel="stylesheet" href="../resources/css/header.css">
     <style>
         /* STyle Default */
         * {
@@ -20,73 +21,6 @@
             color: #333;
         }
 
-        /* Navbar */
-        nav {
-          background-color: #0E4088;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1px 20px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 5;
-            color: white;
-        }
-        
-        nav .logo {
-        color: white;
-        font-size: 1.2em; 
-        font-weight: bold;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center; 
-        }
-
-nav .nav-link {
-    color: white;
-    text-decoration: none; 
-}
-
-nav .nav-link.active {
-    background-color: #D3D3D3; 
-}
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-        nav ul li {
-            margin-left: 1px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 0.8em;
-            padding: 5px;
-            border-radius: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: #5db0d0; 
-            border-radius: 5px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-            margin: 0 15px;
-            padding: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #345f80;
-            border-radius: 5px;
-        }
 
         /* Header*/
         header {
@@ -154,8 +88,12 @@ nav .nav-link.active {
 </div>
 
         <ul>
-            <li><a href="#" class="nav-link active">Home</a></li>
-            <li><a href="#" class="nav-link ">Informasi</a></li>
+            <li>
+                <a href="home" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'home' ? 'active' : ''; ?>">Home</a>
+            </li>
+            <li>
+                <a href="informasi" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'informasi' ? 'active' : ''; ?>">Informasi</a>
+            </li>
             <li><a href="#" class="nav-link ">Menu</a></li>
             <li><a href="#" class="nav-link ">About</a></li>
         </ul>
