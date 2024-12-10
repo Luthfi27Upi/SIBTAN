@@ -79,7 +79,7 @@
 
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="NO_HP" class="form-label">Phone Number:</label>
+                    <label for="NO_HP" class="form-label">NO Telepon:</label>
                     <input type="text" class="form-control" id="NO_HP" name="NO_HP" placeholder="Enter Phone Number">
                 </div>
                 <div class="col-md-6">
@@ -90,11 +90,11 @@
 
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="ALAMAT" class="form-label">Address:</label>
+                    <label for="ALAMAT" class="form-label">Alamat:</label>
                     <input type="text" class="form-control" id="ALAMAT" name="ALAMAT" placeholder="Enter Address">
                 </div>
                 <div class="col-md-6">
-                    <label for="JENIS_KELAMIN" class="form-label">Gender:</label>
+                    <label for="JENIS_KELAMIN" class="form-label">Jenis Kelamin:</label>
                     <select class="form-select" id="JENIS_KELAMIN" name="JENIS_KELAMIN">
                         <option value="1">Male</option>
                         <option value="0">Female</option>
@@ -119,17 +119,17 @@
 
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="tempat_lahir" class="form-label">Place of Birth:</label>
+                    <label for="tempat_lahir" class="form-label">Tempat Lahir:</label>
                     <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" placeholder="Enter Place of Birth">
                 </div>
                 <div class="col-md-6">
-                    <label for="tanggal_lahir" class="form-label">Date of Birth:</label>
+                    <label for="tanggal_lahir" class="form-label">Tempat Lahir:</label>
                     <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir">
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="jurusan" class="form-label">Department:</label>
+                <label for="jurusan" class="form-label">Jurusan:</label>
                 <input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="Enter Department">
             </div>
 
