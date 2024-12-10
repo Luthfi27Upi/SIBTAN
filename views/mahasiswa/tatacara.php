@@ -43,20 +43,6 @@
     color: #043873;
     font-size: 1.5rem;
   }
-
-  header {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #CCE5FF;
-    }
-  
-  header .user {
-    font-weight: bold;
-    color: #2B74C4;
-  }
-
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -66,10 +52,7 @@
 
     <!-- Main Content -->
     <div class="content">
-      <header>
-        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
-        <div class="user">Lutfi Triaswangga</div>
-      </header>
+      <?php include 'header.php'; ?>
       <main>
         <div class="card">
           <h1>Tata Cara Upload:</h1>
