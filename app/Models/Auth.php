@@ -22,7 +22,14 @@ class Auth {
         
         return false;
     }
-    
+    public function getJurusan($id) {
+        $sql = "SELECT JURUSAN FROM DATA_MHS WHERE ID_MHS = ?";
+        $stmt = sqlsrv_query($this->db, $sql, [$id]);
+        
+        return sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+        
+    }
+ 
     public function createPasswordResetToken($email) {
         date_default_timezone_set('Asia/Jakarta');
         

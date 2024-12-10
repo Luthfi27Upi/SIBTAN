@@ -141,19 +141,14 @@ switch ($path) {
         $controller->renderCards(); 
         break;
 
-    case '/users/infodata':
-        $controller = new FormController($formModel);
-        $controller->renderCards(); 
-        break;
-
     case '/users/logout':
         $controller = new AuthController($authModel);
         $controller->logout();
         break;
 
-    case '/users/callcenter':
+    case '/cetak':
         $controller = new FormController($formModel);
-        $controller->renderCards(); 
+        $controller->cetak();
         break;
 
     case '/users/files/'.$id:
@@ -175,10 +170,11 @@ switch ($path) {
         echo $controller->verifyForm();
         break;
 
-    case '/admin/data':
+    case '/users/data':
         $controller = new UserController($userModel);
-        $controller->index();
+        echo $controller->index();
         break;
+
     default:
         header("HTTP/1.0 404 Not Found");
         echo "404 Not Found - Path: " . $path;

@@ -9,51 +9,6 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <style>
     /* Sidebar styling */
-    .sidebar {
-      background: linear-gradient(to bottom, #021a44, #043873, #4fa3ff); 
-      color: white;
-      min-width: 200px;
-      max-width: 200px;
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      height: 100vh;
-      padding-top: 0.10px;
-    }
-
-    .sidebar .nav-link {
-      color: white;
-      font-weight: 500;
-      padding: 10px 20px;
-    }
-
-    .sidebar .nav-link.active, .sidebar .nav-link:hover{
-      background-color: #FFE492; 
-      color: white;
-      padding: 3px 6px;
-      border-radius: 8px;
-      font-size: 15px;
-      margin-top: -4px;
-      margin-bottom: -1px;
-      
-    }
-    .sidebar .logo {
-      width: 80px;
-      margin-top: -20px;
-    }
-
-    .sidebar-footer {
-      margin-top: auto; /* mendorong ke bawah*/
-      font-size: 0.8rem;
-      text-align: center;
-      padding: 10px 0;
-      color: white;
-    }
-
-    .sidebar .nav-item {
-    margin-bottom: 15px; /* Tambah jarak antar menu */
-    }
- 
     h5{
       margin-top: -20px; /* mengatur jarak logo dan sibtan */
     }
@@ -134,34 +89,17 @@
 <body class="d-flex flex-column min-vh-100">
   <div class="d-flex flex-grow-1">
     <!-- Sidebar -->
-    <nav class="sidebar">
-      <div class="text-center py-4">
-        <img src="img/designLogo.png" alt="Logo SiBTAN" class="logo mb-1">
-        <h5>SiBTAN</h5>
-      </div>
-      <ul class="nav flex-column px-2">
-      <li class="nav-item my-2"><a href="DashboardAdmJurusan.php" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-        <li class="nav-item"><a href="TataCaraAdmJurusan.php" class="nav-link ">Tata Cara</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Dataku</a></li>
-        <li class="nav-item"><a href="InfoAdmJurusan.php" class="nav-link">Info Data</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
-        <li class="nav-item"><a href="CallAdmJurusan.php" class="nav-link active">Call Center</a></li>
-      </ul>
-      <div class="sidebar-footer">
-        © 2024 SiBTAN JTI Polinema.
-      </div>
-    </nav>
+    <?php include 'sidebar.php'; ?>
 
     <!-- Main Content -->
     <div class="content">
       <header>
-        <img src="img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
+        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
         <div class="user">Lutfi Triaswangga</div>
       </header>
       <main>
         <div class="title-with-icon">
-          <img src="img/logocallcenter.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
+          <img src="../img/logocallcenter.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
           <h1 class="page-title">INFO CALL CENTER</h1>
         </div>
         <div class="cointainer mt-4">
@@ -172,7 +110,7 @@
                     <p class="text-muted">Show 20 Previous Message</p>
                     <div class="messages">
                     <div class="message-item mb-3 d-flex align-items-start">
-                        <img src="img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
+                        <img src="../img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
                         <div>
                         <div class="fw-bold">Lutfi Triaswangga</div>
                         <small class="text-muted">27 Oktober 2024 20.05</small>
@@ -182,7 +120,7 @@
                     </div>
                     <!-- Salin div .message-item untuk mengulang pesan -->
                     <div class="message-item mb-3 d-flex align-items-start">
-                        <img src="img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
+                        <img src="../img/logouser.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
                         <div>
                         <div class="fw-bold">Lutfi Triaswangga</div>
                         <small class="text-muted">27 Oktober 2024 20.05</small>
@@ -199,7 +137,7 @@
                 </div>
                 <!-- Bagian gambar -->
                 <div class="col-md-4">
-                    <img src="img/Gedung.jpg" alt="img/Gedung" class="img-fluid rounded">
+                    <img src="../img/Gedung.jpg" alt="../img/Gedung" class="img-fluid rounded">
                 </div>
             </div>
         </div>

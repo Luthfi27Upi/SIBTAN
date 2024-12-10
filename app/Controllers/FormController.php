@@ -127,5 +127,9 @@ class FormController
             exit();
         }
     }
+
+    public function cetak() {
+        require 'views/mahasiswa/cetak.php'; 
+    }
     
 }
