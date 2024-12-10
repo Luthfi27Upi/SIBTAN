@@ -82,19 +82,19 @@
                         $tanggalHariIni = date('l, d F Y'); 
                         echo $tanggalHariIni; ?>
                     </td>
-                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked disabled></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Laporan</td>
                     <td>Anggi Petra W.P., A.Md.</td>
-                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked disabled></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Penyampaian Publikasi</td>
                     <td>TTD :</td>
-                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked disabled></td>
                 </tr>
             </table>
         </div>
@@ -117,25 +117,25 @@
                         $tanggalHariIni = date('l, d F Y'); 
                         echo $tanggalHariIni; ?>
                         </td>
-                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked disabled></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Distribusi Laporan Menggeng</td>
                     <td>Sri Warhiyati, S.S.</td>
-                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked disabled></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Bebas Kompensasi</td>
                     <td>TTD :</td>
-                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked disabled></td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Scan TOEIC</td>
                     <td></td>
-                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked disabled></td>
                 </tr>
             </table>
         </div>
