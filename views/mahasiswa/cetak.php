@@ -49,7 +49,7 @@
 <body>
 
     <div class="header">
-        <img src="logo.png" alt="Logo"> 
+        <img src="/resources/img/LogoPolinema.png" alt="Logo"> 
         <h1 style="text-align: center">KEMENTERIAN PENDIDIKAN, KEBUDAYAAN, Riset, dan Teknologi</h1>
     </div>
 
@@ -75,7 +75,7 @@
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>Ahl/Program/Apikasi</td>
+                    <td>Alat/Program/Aplikasi</td>
                     <td>
                         Tanggal :
                         <?php 
@@ -121,7 +121,7 @@
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Distribusi Laporan Menggeng</td>
+                    <td>Distribusi Laporan Magang</td>
                     <td>Sri Warhiyati, S.S.</td>
                     <td><input type="checkbox" checked disabled></td>
                 </tr>
