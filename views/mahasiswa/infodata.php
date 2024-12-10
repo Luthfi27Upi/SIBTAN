@@ -104,7 +104,6 @@
     <div class="content">
       <!-- Header -->
       <header>
-main
         <img src="../img/logouser.jpg" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
         <div class="user">Lutfi Triaswangga</div>
       </header>
@@ -115,43 +114,31 @@ main
         <h1 class="page-title">INFO DATA</h1>
       </div>
 
-      <!-- Info Call Center  -->
-      <div class="cointainer mt-4">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="info-section">
-            <ol>
-
-        <img src="../../resources/img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
-        <div class="user">Lutfi Triaswangga</div>
-      </header>
-      <main>
-        <div class="title-with-icon">
-          <img src="../../resources/img/logoinfodata.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
-          <h1 class="page-title">INFO DATA</h1>
-        </div>
-        <div class="info">
-          <ol>
- main
-            <li>Berkas yang akan di-upload sudah mendapat ACC dari dosen atau admin terkait.</li>
-            <li>Persiapkan berkas yang akan di-upload dan pastikan sudah benar.</li>
-            <li>Scan file dengan format PDF/PNG dan pastikan gambar sudah jelas.</li>
-            <li>Ukuran file maks 3MB.</li>
-            <li>Pastikan file sudah terunggah dengan sukses.</li>
-            <li>Setelah file sukses terunggah, semua file akan diverifikasi oleh admin. Untuk verifikasi akan membutuhkan sedikit waktu lebih lama.</li>
-            <li>Mohon untuk aktif mengecek website SiBTaN setelah melakukan upload dokumen.</li>
-            <li>Pemberitahuan!</li>
-            <li>Diwajibkan mengunggah foto formal pada masing-masing akun.</li>
-            <li>Diberitahukan kepada seluruh mahasiswa bahwa data syarat untuk pengajuan surat bebas tanggungan dapat diunggah di website SiBTaN adalah daftar kegiatan yang diikuti selama masa studi di Politeknik Negeri Malang.</li>
-            <li>Pertanyaan lebih lanjut dapat menghubungi call center pada website SiBTaN.</li>
-            <li>Untuk upload scan TOEIC dengan skor minimal 450 untuk Diploma 4. Apabila sudah mengikuti 1x tes gratis Polinema dan 1x ujian mandiri berbayar namun nilai masih kurang,
-              maka akan diberikan surat keterangan dari UPA Bahasa (Grapol Lantai 3).</li>
-          </ol>
+      <div class="container mt-4">
+        <div class="row d-flex align-items-stretch">
+          <!-- Info Section -->
+          <div class="col-md-7">
+            <div class="info-section h-100">
+              <ol>
+                <li>Berkas yang akan di-upload sudah mendapat ACC dari dosen atau admin terkait.</li>
+                <li>Persiapkan berkas yang akan di-upload dan pastikan sudah benar.</li>
+                <li>Scan file dengan format PDF/PNG dan pastikan gambar sudah jelas.</li>
+                <li>Ukuran file maks 3MB.</li>
+                <li>Pastikan file sudah terunggah dengan sukses.</li>
+                <li>Setelah file sukses terunggah, semua file akan diverifikasi oleh admin. Untuk verifikasi akan membutuhkan sedikit waktu lebih lama.</li>
+                <li>Mohon untuk aktif mengecek website SiBTaN setelah melakukan upload dokumen.</li>
+                <li>Pemberitahuan!</li>
+                <li>Diwajibkan mengunggah foto formal pada masing-masing akun.</li>
+                <li>Diberitahukan kepada seluruh mahasiswa bahwa data syarat untuk pengajuan surat bebas tanggungan dapat diunggah di website SiBTaN adalah daftar kegiatan yang diikuti selama masa studi di Politeknik Negeri Malang.</li>
+                <li>Pertanyaan lebih lanjut dapat menghubungi call center pada website SiBTaN.</li>
+                <li>Untuk upload scan TOEIC dengan skor minimal 450 untuk Diploma 4. Apabila sudah mengikuti 1x tes gratis Polinema dan 1x ujian mandiri berbayar namun nilai masih kurang, maka akan diberikan surat keterangan dari UPA Bahasa (Grapol Lantai 3).</li>
+              </ol>
             </div>
           </div>
 
-          <div class="col-md-4">
-            <img src="../img/gedung.jpg" alt="Gedung" class="img-fluid rounded">
+          <!-- Image Section -->
+          <div class="col-md-5 d-flex">
+            <img src="../img/gedung.jpg" alt="Gedung" class="img-fluid rounded h-100" style="object-fit: cover;">
           </div>
         </div>
       </div>
