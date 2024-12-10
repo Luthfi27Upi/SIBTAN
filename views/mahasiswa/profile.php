@@ -1,3 +1,12 @@
+<?php
+
+if (is_array($_SESSION['user']['jurusan'])) {
+
+    $jurusanString = implode(', ', $_SESSION['user']['jurusan']);
+} else {
+    $jurusanString = $_SESSION['user']['jurusan'] ?? 'Jurusan tidak tersedia';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,59 +103,51 @@
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <label for="nama-lengkap" class="form-label">Nama Lengkap:</label>
-                    <input type="text" class="form-control" id="nama-lengkap" name="nama-lengkap">
+                    <input type="text" class="form-control" id="nama-lengkap" name="nama-lengkap" value="<?= $_SESSION['user']['username']?>" disabled>
                   </div>
 
                   <div class="col-md-6">
-                    <label for="nama-panggilan" class="form-label">Nama Panggilan:</label>
-                    <input type="text" class="form-control" id="nama-panggilan" name="nama-panggilan">
+                    <label for="alamat" class="form-label">Alamat</label>
+                    <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $_SESSION['user']['alamat']?>" disabled>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <label for="nim" class="form-label">NIM:</label>
-                    <input type="text" class="form-control" id="nim" name="nim">
+                    <input type="text" class="form-control" id="nim" name="nim" value="<?= $_SESSION['user']['nim']?>" disabled>
                   </div>
 
                   <div class="col-md-6">
                     <label for="ttl" class="form-label">Tempat, Tanggal Lahir:</label>
-                    <input type="text" class="form-control" id="ttl" name="ttl">
+                    <input type="text" class="form-control" id="ttl" name="ttl"value="<?= $_SESSION['user']['tempat_lahir'].',  '.$_SESSION['user']['tanggal_lahir']->format('d-m-Y');?>" disabled>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <label for="no-telp" class="form-label">No. Telp:</label>
-                    <input type="text" class="form-control" id="no-telp" name="no-telp">
+                    <input type="text" class="form-control" id="no-telp" name="no-telp" value="<?= $_SESSION['user']['no_hp']?>" disabled>
                   </div>
 
                   <div class="col-md-6">
                     <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="email" class="form-control" id="email" name="email"value="<?= $_SESSION['user']['email']?>" disabled>
                   </div>
                 </div>
-
-                <div class="mb-3">
-                  <label for="tentang-saya" class="form-label">Tentang Saya:</label>
-                  <textarea class="form-control" id="tentang-saya" name="tentang-saya" rows="2"></textarea>
-                </div>
-
-                <div>
-                  <button type="submit" class="btn btn-primary">Simpan</button>
-                </div>
+               
               </form>
             </div>
 
             <!-- Profile Section -->
             <div class="col-md-4 ms-5"style="margin-top: -95px;">
               <div class="bg-primary">
-                <img src="../../resources/img/logouser.jpg" alt="User Avatar" class="rounded-circle mb-6">
+                <img src="/<?= $_SESSION['user']['image']?>" alt="User Avatar" class="rounded-circle mb-6">
                   <div class="identitas ">
-                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">Lutfi Triaswangsa</span>
-                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">2341720200</span>
-                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">Mahasiswa</span>
-                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">D-IV Teknik Informatika</span>
+                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;"><?= $_SESSION['user']['username']?></span>
+                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;"><?= $_SESSION['user']['nim']?></span>
+                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;"><?= $_SESSION['user']['role']?></span>
+                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;"><?=$jurusanString;?></span>
                 </div>
               </div>
             </div>

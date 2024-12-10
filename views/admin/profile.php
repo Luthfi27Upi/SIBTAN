@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <style>
+    /* Sidebar styling */
     h5{
       margin-top: -20px; /* mengatur jarak logo dan sibtan */
     }
@@ -143,10 +144,8 @@
               <div class="bg-primary">
                 <img src="../../resources/img/logouser.jpg" alt="User Avatar" class="rounded-circle mb-6">
                   <div class="identitas ">
-                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">Lutfi Triaswangsa</span>
-                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">2341720200</span>
-                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">Mahasiswa</span>
-                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">D-IV Teknik Informatika</span>
+                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">Lutfi Triaswangga</span>                  
+                  <span style="display: block; margin-bottom: 20px; font-size: 1.3rem;">Admin Jurusan</span>
                 </div>
               </div>
             </div>

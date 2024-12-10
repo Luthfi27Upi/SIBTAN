@@ -32,14 +32,12 @@
       padding: 20px;
      
     }
-
     .hero-section {
       background: url('../img/RuanganDashboard.png') center/cover no-repeat;
       padding: 100px 20px;
       border-radius: 30px;
       margin-left: 200px;
     }
-
     .hero-section h2 {
     color: #FFE492; /* Warna teks */
     text-align: center; /* Tengah */
@@ -47,14 +45,30 @@
     font-weight: bold; /* Teks lebih tebal */
   }
 
+  header {
+    background-color: #CCE5FF; /* Warna biru muda */
+    text-align: center; 
+    color: #043873; /* Warna teks biru gelap */
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 15px; /* mengatur ruang didalam elemen */
+    border-radius: 40px; /* Sudut melingkar */
+    width: 80%; /* Lebar header agar proporsional */
+    margin-left: 230px;  /*memberi jarak dari sisi kiri */
+    }
   .hero-section p {
     color: #FFE492;
     font-size: 1.5rem; /* Ukuran font lebih besar */
     font-weight: 500; /* Tebal sedang */
   }
-    
+  
 
-
+    /* Main Content styling */
+    .content {
+      margin-left: 10px; 
+      width: calc(100% - 200px);
+      padding: 20px;     
+    } 
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -69,8 +83,8 @@
       </header>
       <div class="p-4">
         <div class="hero-section text-center mb-4">
-          <h2 style="color:#FFE492; text-align:center;" >Sistem Bebas Tanggungan</h2>
-          <p style="color:#FFE492">Jurusan Teknologi Informasi</p>
+        <h2 style="color:#FFE492; text-align:center;" >Sistem Bebas Tanggungan</h2>
+        <p style="color:#FFE492">Jurusan Teknologi Informasi</p>
           <!--<img src="img/RuanganDashboard.png" class="img-fluid rounded mx-auto d-block background-cover-img" style="max-width: 600px;" alt="Ruangan Dashboard">-->
         </div>
         <section class="info-section text-center">

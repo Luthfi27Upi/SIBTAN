@@ -72,12 +72,12 @@
     <!-- Main Content -->
     <div class="content">
       <header>
-        <img src="img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
+        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
         <div class="user">Lutfi Triaswangga</div>
       </header>
       <main>
         <div class="title-with-icon">
-          <img src="img/logoinfodata.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
+          <img src="../img/logoinfodata.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
           <h1 class="page-title">INFO DATA</h1>
         </div>
         <div class="info">
