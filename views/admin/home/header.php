@@ -15,9 +15,5 @@
         </li>
         <li><a href="users/home" class="nav-link ">Menu</a></li>
         </li>
-        <li>
-            <a href="about"
-                class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'about' ? 'active' : ''; ?>">About</a>
-        </li>
     </ul>
 </nav>

@@ -150,10 +150,7 @@
 
     <div class="content">
       <!-- Header -->
-      <header>
-        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
-        <div class="user">Lutfi Triaswangga</div>
-      </header>
+      <?php include 'header.php'; ?>
 
       <!-- Judul -->
       <div class="title-with-icon">

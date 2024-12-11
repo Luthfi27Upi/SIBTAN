@@ -32,25 +32,36 @@
             }
           }
         ?>
-        <div class="col-12 mb-4 text-end">
-        <a 
-        href="/cetak" 
+     <div class="col-12 mb-4 text-end">
+    <button 
+        id="btnCetakForm" 
         class="btn-cetak"
         style="
         display: inline-block;
         padding: 10px 20px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #fff;
-      background-color: #007bff; 
-      border: none;
-      border-radius: 5px;
-      text-align: center;
-      text-decoration: none; "
-        >Cetak Form</a>
-        </div>
-          
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #007bff; 
+        border: none;
+        border-radius: 5px;
+        text-align: center;"
+        <?php if (!$allAcc): ?> disabled <?php endif; ?> 
+    >Cetak Form</button>
+</div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btnCetakForm = document.getElementById('btnCetakForm');
+
+        btnCetakForm.addEventListener('click', function () {
+            if (!btnCetakForm.disabled) {
+                // Arahkan ke URL cetak
+                window.location.href = '/cetak';
+            }
+        });
+    });
+</script>
           <!-- Card Template -->
           <?php foreach ($cardStatuses as $card): ?>
             <div class="col-md-4 mb-4">
@@ -182,19 +193,17 @@
         $("#sidebar-container").load("sidebar.html");
       });
 
-      document.addEventListener('DOMContentLoaded', () => {
-    const btnCetakForm = document.getElementById('btnCetakForm');
-   
-   if (!btnCetakForm.disabled) {
-     btnCetakForm.addEventListener('click', function () {
-       window.print();
-     });
-   }
-});
 
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<style>
+.btn-cetak[disabled] {
+    background-color: #6c757d; /* Warna abu-abu untuk tombol dinonaktifkan */
+    cursor: not-allowed; /* Menunjukkan bahwa tombol tidak dapat diklik */
+    opacity: 0.65; /* Mengurangi opasitas untuk menunjukkan bahwa tombol dinonaktifkan */
+}
 
+</style>
 </html>

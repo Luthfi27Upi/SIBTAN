@@ -118,8 +118,4 @@ class AuthController {
         mail($email, $subject, $message1 . $message2);
     }
     
-    public function logout() {
-        //session_destroy();
-        //header('Location: /login');
-    }
 }
