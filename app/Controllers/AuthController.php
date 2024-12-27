@@ -75,30 +75,30 @@ class AuthController {
 
             if ($inputOTP === $tempAuth['otp']) {
                 $user = $tempAuth['user'];
-                $jurusan = $this->auth->getJurusan($user['ID']);
+                //$jurusan = $this->auth->getJurusan($user['ID']);
          
-                if ($jurusan === null) {
+                /*if ($jurusan === null) {
                     error_log("Jurusan tidak ditemukan untuk ID: " . $user['ID']);
-                }
+                }*/
          
                 $_SESSION['user'] = [
                     'nim' => $user['NIM'],
                     'username' => $user['USERNAME'],
-                    'role' => $user['ROLE'],
-                    'id' => $user['ID'],
-                    'image' => $user['image'],
+                    'role' => $user['ID_ROLE'],
+                    //'id' => $user['ID'],
+                    //'image' => $user['image'],
                     'email' => $user['EMAIL'],
                     'no_hp' => $user['NO_HP'],
                     'alamat' => $user['ALAMAT'],
                     'jenis_kelamin' => $user['JENIS_KELAMIN'],
-                    'tempat_lahir' => $user['tempat_lahir'],
-                    'tanggal_lahir' => $user['tanggal_lahir'],
-                    'jurusan' => $jurusan,
+                    //'tempat_lahir' => $user['tempat_lahir'],
+                    //'tanggal_lahir' => $user['tanggal_lahir'],
+                    //'jurusan' => $jurusan,
                 ];
          
                 echo json_encode([
                     "status" => "success",
-                    "role" => $user['ROLE'] 
+                    "role" => $user['ID_ROLE']
                 ]);
          
                 unset($_SESSION['temp_auth']);

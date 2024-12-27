@@ -75,7 +75,6 @@
                   <form id="uploadForm-<?= $card['label'] ?>" action="actionupload" method="POST"
                     enctype="multipart/form-data" style="display: none;">
                     <input type="hidden" name="label" value="<?= $card['label'] ?>">
-                    <input type="hidden" name="id_berkas" value="<?= $card['id_berkas'] ?>">
                     <input type="file" name="uploaded_file" id="fileInput-<?= $card['label'] ?>" accept="application/pdf">
                   </form>
                   <script>
@@ -89,11 +88,11 @@
                       uploadForm.submit();
                     });
                   </script>
-                <?php elseif ($card['status'] === 3): ?>
+                <?php elseif ($card['status'] === 'Ditolak'): ?>
                   <div class="card-content">
                     <i class="icon fas fa-file-alt"></i>
                     <h5><?= $card['label'] ?></h5>
-                    <button class="btn btn-danger">Ditolak</button>
+                    <button class="btn btn-danger"><?= $card['status'] ?></button>
                   </div>
                   <div class="card-hover">
                     <p><?= $card['label'] ?></p>
@@ -118,11 +117,11 @@
                       uploadForm.submit();
                     });
                   </script>
-                <?php elseif ($card['status'] === 4): ?>
+                <?php elseif ($card['status'] === 'ACC'): ?>
                   <div class="card-content">
                     <i class="icon fas fa-file-alt"></i>
                     <h5><?= $card['label'] ?></h5>
-                    <button class="btn btn-success">Diverifikasi</button>
+                    <button class="btn btn-success"><?= $card['status'] ?></button>
                   </div>
                   <div class="card-hover">
                     <p><?= $card['label'] ?></p>
@@ -144,11 +143,7 @@
                 <?php else: ?>
                   <div class="card-content">
                     <p><?= $card['label'] ?></p>
-                    <button class="btn btn-warning">Menunggu Verifikasi</button>
-                    <footer class="blockquote-footer pt-4 mt-4 border-top">
-                      Someone famous in
-                      <cite title="Source Title">Source Title</cite>
-                    </footer>
+                    <button class="btn btn-warning"><?= $card['status'] ?></button>
                   </div>
                   <div class="card-hover">
                     <p><?= $card['label'] ?></p>
@@ -178,22 +173,18 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.querySelector('#pdfModal');
+      const modals = document.querySelectorAll('[id^="pdfModal"]');
 
-      modal.addEventListener('show.bs.modal', () => {
-        document.body.classList.add('modal-open-hover-disabled');
-      });
+      modals.forEach((modal) => {
+        modal.addEventListener('show.bs.modal', () => {
+          document.body.classList.add('modal-open-hover-disabled');
+        });
 
-      modal.addEventListener('hidden.bs.modal', () => {
-        document.body.classList.remove('modal-open-hover-disabled');
+        modal.addEventListener('hidden.bs.modal', () => {
+          document.body.classList.remove('modal-open-hover-disabled');
+        });
       });
     });
-
-    $(document).ready(function () {
-      $("#sidebar-container").load("sidebar.html");
-    });
-
-
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
@@ -201,8 +192,11 @@
 <style>
   .btn-cetak[disabled] {
     background-color: #6c757d;
+    /* Warna abu-abu untuk tombol dinonaktifkan */
     cursor: not-allowed;
+    /* Menunjukkan bahwa tombol tidak dapat diklik */
     opacity: 0.65;
+    /* Mengurangi opasitas untuk menunjukkan bahwa tombol dinonaktifkan */
   }
 </style>
 

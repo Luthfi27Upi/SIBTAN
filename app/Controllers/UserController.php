@@ -83,6 +83,18 @@ class UserController {
 
     public function index() {
         $users = $this->userModel->getAll();
+        
+        $progressBar = [];
+        foreach ($users as $key => $user) {
+            $progress = $this->userModel->countProgress($user['NIM']);
+            $totalBerkas = $this->userModel->countBerkas();
+            $users[$key]['progress_bar'] = [
+                'total' => $totalBerkas,
+                'status_2' => ($progress['status_2'] / $totalBerkas) * 100,
+                'status_3' => ($progress['status_3'] / $totalBerkas) * 100,
+                'status_4' => ($progress['status_4'] / $totalBerkas) * 100,
+            ];
+        }
         require 'views/admin/data.php';
     }
 }

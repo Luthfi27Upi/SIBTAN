@@ -6,10 +6,12 @@ class Form {
         $this->db = $db;
     }
     
-    public function create($id, $file_name, $file_path, $status) {
-        $sql = "INSERT INTO [FILES] (id, file_name, file_path, status) 
+    public function create($nim, $id_status, $id_berkas, $file_path) {
+        $sql = "INSERT INTO [BEBAS_TANGGUNGAN] (nim, id_status, id_berkas, file_path) 
                 VALUES (?, ?, ?, ?)";
-        $params = [$id, $file_name, $file_path, $status];
+        $params = [$nim, $id_status, $id_berkas, $file_path];
+        var_dump($params); // Debug untuk melihat nilai parameter
+
     
         $stmt = sqlsrv_query($this->db, $sql, $params);
 
@@ -49,20 +51,20 @@ class Form {
         }
     }
 
-    public function getFile($userId, $file_name) {
-        $sql = "SELECT file_path FROM FILES WHERE id = ? AND file_name = ?";
-        $params = [$userId, $file_name];
-        $stmt = sqlsrv_prepare($this->db, $sql, $params);
+    public function getFile($nim, $id) {
+        $sql = "SELECT FILE_PATH FROM BEBAS_TANGGUNGAN WHERE NIM = ? AND ID_BERKAS = ?";
+        $params = [$nim, $id];
+        
+        $stmt = sqlsrv_query($this->db, $sql, $params);
 
         if (!$stmt) {
             die(print_r(sqlsrv_errors(), true));
         }
 
-        if (sqlsrv_execute($stmt)) {
-            $result = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
-            return $result ? $result['file_path'] : null;
-        }
+        $result = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+        return $result ? $result['FILE_PATH'] : null;
     }
+    
     public function updateStatus($userId, $file_name, $newStatus) {
         $sql = "UPDATE FILES SET status = ? WHERE id = ? AND file_name = ?";
         $params = [$newStatus, $userId, $file_name];
@@ -109,6 +111,40 @@ class Form {
             $users[] = $row;
         }
         return $forms;
+    }
+
+    public function getBerkas() {
+        
+        $sql = "
+            SELECT * FROM [BERKAS]
+        ";
+        
+        $stmt = sqlsrv_query($this->db, $sql);
+    
+        if ($stmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+    
+        $forms = [];
+        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+            $forms[] = $row;
+        }
+        return $forms;
+    }
+
+    public function getStatus($nim, $id) {
+        
+        $sql = "SELECT ID_STATUS FROM [BEBAS_TANGGUNGAN] WHERE NIM = ? AND ID_BERKAS = ?";
+        $params = [$nim, $id];
+        
+        $stmt = sqlsrv_query($this->db, $sql, $params);
+    
+        if ($stmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+
+        $result = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+        return $result ? $result['ID_STATUS'] : null;
     }
 }
     
