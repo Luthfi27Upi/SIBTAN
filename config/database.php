@@ -11,7 +11,7 @@ class Database {
         $serverName = "MSI\SQLEXPRESS";
 
         $connectionOptions = [
-            "Database" => "SIBTAN",
+            "Database" => "SIBTAN-REWORK",
             
             "Uid" => "sa",
             "PWD" => "12345",

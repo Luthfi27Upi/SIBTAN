@@ -126,47 +126,100 @@
                   </div>
                   <div class="card-hover">
                     <p><?= $card['label'] ?></p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal">View PDF</button>
+                    <button class="btn btn-primary" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#pdfModal-<?= $card['id_berkas'] ?>" 
+                            data-file-path="<?= $card['file_path'] ?>">Lihat PDF</button>
                   </div>
-                  <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="pdfModalLabel"><?= $card['label'] ?> - PDF</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <embed src="<?= $card['file_path'] ?>" type="application/pdf" width="100%" height="500px">
-                        </div>
+
+                  <!-- Modal unik untuk setiap kartu -->
+                  <div class="modal fade" id="pdfModal-<?= $card['id_berkas'] ?>" tabindex="-1" aria-labelledby="pdfModalLabel-<?= $card['id_berkas'] ?>" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="pdfModalLabel-<?= $card['id_berkas'] ?>"><?= $card['label'] ?> - PDF</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                  <embed src="" type="application/pdf" width="100%" height="500px">
+                              </div>
+                          </div>
                       </div>
-                    </div>
                   </div>
+
+                  <script>
+                      document.addEventListener('DOMContentLoaded', () => {
+                          
+                          document.body.addEventListener('show.bs.modal', (event) => {
+                              const button = event.relatedTarget; 
+                              const filePath = button.getAttribute('data-file-path'); // Ekstrak info dari atribut data-*
+                              const modalId = button.getAttribute('data-bs-target'); // Dapatkan ID modal 
+                              const modal = document.querySelector(modalId); // Pilih modal menggunakan ID
+                              const modalBody = modal.querySelector('.modal-body embed'); // Pilih embed
+
+                              modalBody.src = filePath;
+
+                              document.body.classList.add('modal-open-hover-disabled');
+                          });
+
+                          document.body.addEventListener('hidden.bs.modal', (event) => {
+                              document.body.classList.remove('modal-open-hover-disabled');
+                          });
+                      });
+                  </script>
                 <?php else: ?>
                   <div class="card-content">
                     <p><?= $card['label'] ?></p>
                     <button class="btn btn-warning">Menunggu Verifikasi</button>
                     <footer class="blockquote-footer pt-4 mt-4 border-top">
-                      Someone famous in
-                      <cite title="Source Title">Source Title</cite>
+                        Seseorang terkenal dalam
+                        <cite title="Judul Sumber">Judul Sumber</cite>
                     </footer>
                   </div>
                   <div class="card-hover">
                     <p><?= $card['label'] ?></p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal">View PDF</button>
+                    <button class="btn btn-primary" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#pdfModal-<?= $card['id_berkas'] ?>" 
+                            data-file-path="<?= $card['file_path'] ?>">Lihat PDF</button>
                   </div>
-                  <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="pdfModalLabel"><?= $card['label'] ?> - PDF</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <embed src="<?= $card['file_path'] ?>" type="application/pdf" width="100%" height="500px">
-                        </div>
+
+                  <!-- Modal unik untuk setiap kartu -->
+                  <div class="modal fade" id="pdfModal-<?= $card['id_berkas'] ?>" tabindex="-1" aria-labelledby="pdfModalLabel-<?= $card['id_berkas'] ?>" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="pdfModalLabel-<?= $card['id_berkas'] ?>"><?= $card['label'] ?> - PDF</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                  <embed src="" type="application/pdf" width="100%" height="500px">
+                              </div>
+                          </div>
                       </div>
-                    </div>
                   </div>
+
+                  <script>
+                      document.addEventListener('DOMContentLoaded', () => {
+                          
+                          document.body.addEventListener('show.bs.modal', (event) => {
+                              const button = event.relatedTarget; 
+                              const filePath = button.getAttribute('data-file-path'); // Ekstrak info dari atribut data-*
+                              const modalId = button.getAttribute('data-bs-target'); // Dapatkan ID modal 
+                              const modal = document.querySelector(modalId); // Pilih modal menggunakan ID
+                              const modalBody = modal.querySelector('.modal-body embed'); // Pilih embed
+
+                              modalBody.src = filePath;
+
+                              document.body.classList.add('modal-open-hover-disabled');
+                          });
+
+                          document.body.addEventListener('hidden.bs.modal', (event) => {
+                              document.body.classList.remove('modal-open-hover-disabled');
+                          });
+                      });
+                  </script>
+
                 <?php endif; ?>
               </div>
             </div>
