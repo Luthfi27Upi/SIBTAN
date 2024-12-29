@@ -26,7 +26,7 @@
           <?php
           $allAcc = true; // di asumsikan jika awal semua file berstatus ACC
           foreach ($cardStatuses as $card) {
-            if ($card['status'] !== 'ACC') {
+            if ($card['status'] !== 4) {
               $allAcc = false; // Jika ada satu file yang statusnya bukan ACC, maka $allAcc = false
               break; // maka keluar dari loop lebih cepat
             }

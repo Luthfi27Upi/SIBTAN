@@ -78,11 +78,9 @@ class FormController
 
     public function renderAdminVerification($id) {
         
-        $filesToVerify = $this->formModel->verificationPending($id);
+        $id_role = $_SESSION['user']['role'];
 
-        $nim = $_SESSION['user']['role'];
-
-        $berkas = $this->formModel->getBerkas();
+        $berkas = $this->formModel->getBerkasAdmin($id_role);
         
         $cardStatuses = [];
         foreach ($berkas as $key => $berkasData) {
