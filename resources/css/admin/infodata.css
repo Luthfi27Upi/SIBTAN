@@ -1,0 +1,28 @@
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara gambar dan teks */
+  margin-top: 20px;
+  margin-left: 80px;
+}
+
+.page-title {
+  color: #2b74c4;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.info {
+  background: #f5f5f5;
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 80px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #043873;
+  max-width: 1050px;
+}
+
+.info li {
+  margin-bottom: 10px;
+}

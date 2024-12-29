@@ -21,9 +21,11 @@
         <!-- Content -->
         <div class="content flex-grow-1">
 
-            <div class="card shadow mb-4">
+        <?php include 'header.php'; ?>
+
+            <div class="card shadow m-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Data Mahasiswa Jurusan Teknologi Informasi</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Data Bebas Tanggungan Jurusan Teknologi Informasi</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -63,10 +65,10 @@
                                         </td>
                                         <td>
                                             <div class="cell-content">
-                                                <a href="/users/read/<?php echo $user['NIM']; ?>" class="btn btn-info btn-sm">View</a>
-                                                <a href="/users/update/<?php echo $user['NIM']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                                <a href="/users/delete/<?php echo $user['NIM']; ?>" class="btn btn-danger btn-sm">Delete</a>
-                                                <a href="/users/files/<?php echo $user['NIM']; ?>" class="btn btn-secondary btn-sm">Detail</a>
+                                                <a href="/users/read/<?php echo $user['NIM']; ?>" class="btn btn-primary btn-sm m-1">View</a>
+                                                <a href="/users/update/<?php echo $user['NIM']; ?>" class="btn btn-warning btn-sm m-1 text-white">Edit</a>
+                                                <a href="/users/delete/<?php echo $user['NIM']; ?>" class="btn btn-danger btn-sm m-1">Delete</a>
+                                                <a href="/users/files/<?php echo $user['NIM']; ?>" class="btn btn-secondary btn-sm m-1">Detail</a>
                                             </div>
                                         </td>
                                     </tr>

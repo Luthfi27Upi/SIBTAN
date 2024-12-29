@@ -47,7 +47,11 @@ class HomepageController
     }
 
     public function callcenter() {
-        require 'views/mahasiswa/callcenter.php';
+        if ($_SESSION['user']['role'] == '1') {
+            require 'views/mahasiswa/callcenter.php';
+        } else {
+            require 'views/admin/callcenter.php';
+        }
     }
 }
 ?>
