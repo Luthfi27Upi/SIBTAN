@@ -123,10 +123,10 @@ class User {
     public function getAll() {
         
         $sql = "
-            SELECT u.*, d.jurusan 
-            FROM [USER] u
-            JOIN data_mhs d ON u.id = d.id_mhs  
-            WHERE u.role = 'mahasiswa'
+        SELECT [USER].*, PROGRAM_STUDI.PRODI
+        FROM [USER]
+        LEFT JOIN PROGRAM_STUDI
+        ON [USER].ID_PRODI = PROGRAM_STUDI.ID_PRODI;
         ";
         
         $stmt = sqlsrv_query($this->db, $sql);
@@ -141,5 +141,43 @@ class User {
         }
         return $users;
     }
+
+    public function countBerkas() {
+        $sql = "SELECT COUNT(*) AS jumlah_berkas FROM BERKAS";
+
+        $stmt = sqlsrv_query($this->db, $sql);
+    
+        if ($stmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+
+        $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+        return $row['jumlah_berkas'];
+    }
+
+    public function countProgress($nim) {
+        $sql = "
+        SELECT 
+            COUNT(CASE WHEN ID_STATUS = 1 THEN 1 END) AS status_1,
+            COUNT(CASE WHEN ID_STATUS = 2 THEN 1 END) AS status_2,
+            COUNT(CASE WHEN ID_STATUS = 3 THEN 1 END) AS status_3,
+            COUNT(CASE WHEN ID_STATUS = 4 THEN 1 END) AS status_4
+        FROM 
+            BEBAS_TANGGUNGAN
+        WHERE 
+            NIM = ?;
+        ";
+        $params = [$nim];
+
+        $stmt = sqlsrv_query($this->db, $sql, $params);
+    
+        if ($stmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+
+        $result = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+        return $result;
+    }
+
 }
 ?>

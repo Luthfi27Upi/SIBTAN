@@ -10,25 +10,18 @@ class FormController
 
     public function renderCards()
     {
-        $userId = $_SESSION['user']['id'];
+        $nim = $_SESSION['user']['nim'];
 
-        $cards = [
-            "APA" => "Alat / Program / Aplikasi",
-            "LAPORAN" => "Laporan",
-            "PUBLIKASI" => "Pernyataan Publikasi",
-            "SKRIPSI" => "Distribusi Laporan Skripsi",
-            "MAGANG" => "Distribusi Laporan Magang",
-            "KOMPEN" => "Bebas Kompensasi",
-            "TOEFL" => "Scan TOEIC",
-        ];
-
+        $berkas = $this->formModel->getBerkas();
+        
         $cardStatuses = [];
-        foreach ($cards as $key => $label) {
-            $status = $this->formModel->checkForm($userId, $label);
-            $filePath = $this->formModel->getFile($userId, $label);
+        foreach ($berkas as $key => $berkasData) {
+            $status = $this->formModel->getStatus($nim, $berkasData['ID_BERKAS']);
+            $filePath = $this->formModel->getFile($nim, $berkasData['ID_BERKAS']);
             $cardStatuses[] = [
                 'fileName' => $key,
-                'label' => $label,
+                'id_berkas' => $berkasData['ID_BERKAS'],
+                'label' => $berkasData['NAMA_BERKAS'],
                 'status' => $status,
                 'file_path' => '../' . $filePath
             ];
@@ -45,6 +38,7 @@ class FormController
     public function create() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $label = $_POST['label'];
+            $id_berkas = $_POST['id_berkas'];
 
             if (isset($_FILES['uploaded_file']) && $_FILES['uploaded_file']['error'] == UPLOAD_ERR_OK) {
                 $fileTmpPath = $_FILES['uploaded_file']['tmp_name'];
@@ -54,8 +48,8 @@ class FormController
                 move_uploaded_file($fileTmpPath, $filePath);
             }
         
-            $userId = $_SESSION['user']['id'];
-            $this->formModel->create($userId, $label,$filePath, 'Menunggu Verifikasi');
+            $nim = $_SESSION['user']['nim'];
+            $this->formModel->create($nim, 2,$id_berkas, $filePath);
             header('Location: /users/dataku');
         } else {
             echo "No file submitted.";
@@ -86,28 +80,23 @@ class FormController
         
         $filesToVerify = $this->formModel->verificationPending($id);
 
-        $role = $_SESSION['user']['role'];
+        $nim = $_SESSION['user']['role'];
 
-        $allowedFileNames = [];
-    
-        if ($role == 'admin_jurusan') {
-            $allowedFileNames = [
-                'Alat / Program / Aplikasi',
-                'Laporan',
-                'Pernyataan Publikasi'
-            ];
-        } elseif ($role == 'admin_prodi') {
-            $allowedFileNames = [
-                'Distribusi Laporan Skripsi',
-                'Distribusi Laporan Magang',
-                'Bebas Kompensasi',
-                'Scan TOEIC'
+        $berkas = $this->formModel->getBerkas();
+        
+        $cardStatuses = [];
+        foreach ($berkas as $key => $berkasData) {
+            $status = $this->formModel->getStatus($id, $berkasData['ID_BERKAS']);
+            $filePath = $this->formModel->getFile($id, $berkasData['ID_BERKAS']);
+            $cardStatuses[] = [
+                'nim' => $id,
+                'fileName' => $key,
+                'id_berkas' => $berkasData['ID_BERKAS'],
+                'label' => $berkasData['NAMA_BERKAS'],
+                'status' => $status,
+                'file_path' => '../' . $filePath
             ];
         }
-    
-        $filteredFiles = array_filter($filesToVerify, function ($file) use ($allowedFileNames) {
-            return in_array($file['FILE_NAME'], $allowedFileNames);
-        });
 
         require 'views/admin/verification.php'; 
     }
@@ -118,9 +107,9 @@ class FormController
             $action = $_POST['action'];
     
             if ($action === 'approve') {
-                $this->formModel->updateStatus($userId, $fileName, "ACC");
+                $this->formModel->updateStatus($userId, $fileName, "4");
             } elseif ($action === 'decline') {
-                $this->formModel->updateStatus($userId, $fileName, "Ditolak");
+                $this->formModel->updateStatus($userId, $fileName, "3");
             }
     
             header('Location: /users/files/'.$userId); 

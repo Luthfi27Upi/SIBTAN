@@ -15,7 +15,7 @@ class HomepageController
     }
 
     public function home() {
-        if ($_SESSION['user']['role'] == 'mahasiswa') {
+        if ($_SESSION['user']['role'] == '1') {
             require 'views/mahasiswa/index.php';
         } else {
             require 'views/admin/index.php';
@@ -23,7 +23,7 @@ class HomepageController
     }
 
     public function profile() {
-        if ($_SESSION['user']['role'] == 'mahasiswa') {
+        if ($_SESSION['user']['role'] == '1') {
             require 'views/mahasiswa/profile.php';
         } else {
             require 'views/admin/profile.php';
@@ -31,7 +31,7 @@ class HomepageController
     }
     
     public function tatacara() {
-        if ($_SESSION['user']['role'] == 'mahasiswa') {
+        if ($_SESSION['user']['role'] == '1') {
             require 'views/mahasiswa/tatacara.php';
         } else {
             require 'views/admin/tatacara.php';
@@ -39,7 +39,7 @@ class HomepageController
     }
 
     public function infodata() {
-        if ($_SESSION['user']['role'] == 'mahasiswa') {
+        if ($_SESSION['user']['role'] == '1') {
             require 'views/mahasiswa/infodata.php';
         } else {
             require 'views/admin/infodata.php';

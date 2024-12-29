@@ -8,10 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="/resources/css/data.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" />
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -21,83 +20,75 @@
 
         <!-- Content -->
         <div class="content flex-grow-1">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="d-flex align-items-center">
-                    <label for="entries" class="me-2">Show</label>
-                    <select id="entries" class="form-select w-auto">
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select>
-                    <span class="ms-2">entries</span>
-                </div>
-                <div class="input-group w-auto">
-                    <span class="input-group-text">Search</span>
-                    <input type="text" class="form-control" placeholder="Search...">
-                </div>
-                <a href="/users/create" class="btn btn-primary">Create New User</a>
-            </div>
 
-            <div class="table-responsive">
-                <table class="table table-bordered table-hover">
-                    <thead class="table-primary text-center">
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Alamat</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Telepon</th>
-                            <th>Jurusan</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php $users = $users ?? []; ?>
-                        <?php if (!empty($users)): ?>
-                            <?php foreach ($users as $user): ?>
-                            <tr>
-                                <td><div class="cell-content"></td>
-                                <td><div class="cell-content"><?php echo htmlspecialchars($user['USERNAME']); ?></div></td>
-                                <td><div class="cell-content"><?php echo htmlspecialchars($user['EMAIL']); ?></div></td>
-                                <td><div class="cell-content"><?php echo htmlspecialchars($user['ALAMAT']); ?></div></td>
-                                <td><div class="cell-content"><?php echo htmlspecialchars($user['JENIS_KELAMIN']? 'Laki-laki' : 'Perempuan'); ?></div></td>
-                                <td><div class="cell-content"><?php echo htmlspecialchars($user['NO_HP']); ?></div></td>
-                                <td><div class="cell-content"><?php echo htmlspecialchars($user['jurusan']); ?></div></td>
-                                <td>
-                                    <div class="cell-content">
-                                        <a href="/users/read/<?php echo $user['ID']; ?>" class="btn btn-info btn-sm">View</a>
-                                        <a href="/users/update/<?php echo $user['ID']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                        <a href="/users/delete/<?php echo $user['ID']; ?>" class="btn btn-danger btn-sm">Delete</a>
-                                        <a href="/users/files/<?php echo $user['ID']; ?>" class="btn btn-secondary btn-sm">Detail</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                        <?php else: ?>  
-                            <tr>
-                                <td colspan="3" class="text-center">No users found.</td>
-                            </tr>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
-            </div>
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Data Mahasiswa Jurusan Teknologi Informasi</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Program Studi</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php $users = $users ?? []; ?>
+                                <?php if (!empty($users)): ?>
+                                    <?php foreach ($users as $user): ?>
+                                    <tr>
+                                        <td><div class="cell-content"><?php echo htmlspecialchars($user['NIM']); ?></div></td>
+                                        <td>
+                                            <div class="cell-content"><?php echo htmlspecialchars($user['USERNAME']); ?></div>
+                                            <div class="progress mt-2" style="height: 5px;">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo $user['progress_bar']['status_2']; ?>%" aria-valuenow="<?php echo $user['progress_bar']['status_2']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $user['progress_bar']['status_4']; ?>%" aria-valuenow="<?php echo $user['progress_bar']['status_4']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-danger" role="progressbar" style="width: <?php echo $user['progress_bar']['status_3']; ?>%" aria-valuenow="<?php echo $user['progress_bar']['status_3']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td><div class="cell-content"><?php echo htmlspecialchars($user['PRODI']); ?></div></td>
+                                        <td>
+                                            <?php if ($user['progress_bar']['status_2'] != 0) { ?>
+                                                <div class="cell-content">Menunggu Verifikasi</div>
+                                                <?php } elseif ($user['progress_bar']['status_4'] == 100) { ?>
+                                                <div class="cell-content">Lengkap</div>
+                                                <?php } elseif ($user['progress_bar']['status_2'] == 0) { ?>
+                                                <div class="cell-content">Belum Ada Unggahan</div>
+                                            <?php } ?>
+                                        </td>
+                                        <td>
+                                            <div class="cell-content">
+                                                <a href="/users/read/<?php echo $user['NIM']; ?>" class="btn btn-info btn-sm">View</a>
+                                                <a href="/users/update/<?php echo $user['NIM']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="/users/delete/<?php echo $user['NIM']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                                <a href="/users/files/<?php echo $user['NIM']; ?>" class="btn btn-secondary btn-sm">Detail</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>  
+                                    <tr>
+                                        <td colspan="3" class="text-center">No users found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    Showing data 1 to <span>10</span> entries
-                </div>
-                <div>
-                    <label for="pagination" class="me-2">Page</label>
-                    <select id="pagination" class="form-select w-auto">
-                        <option value="1">1</option>
-                        <!-- Tambahkan opsi halaman lainnya -->
-                    </select>
-                </div>
             </div>
 
             <script>
+                $(document).ready( function () {
+                    $('#dataTable').DataTable();
+                    new DataTable('#dataTable');
+                } );
+
                 document.addEventListener('DOMContentLoaded', () => {
                     const modal = document.querySelector('#pdfModal');
 
@@ -114,7 +105,14 @@
                     $("#sidebar-container").load("sidebar.html");
                 });
             </script>
+            <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+            <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+            <script src="https://kit.fontawesome.com/15ab4f5b8b.js" crossorigin="anonymous"></script>
+
+            
 </body>
 
 </html>

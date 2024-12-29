@@ -104,8 +104,8 @@
     <div class="content">
       <!-- Header -->
       <header>
-        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
-        <div class="user">Lutfi Triaswangga</div>
+        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
+        <div class="user"><?php echo $_SESSION['user']['username'] ?></div>
       </header>
 
       <!-- Judul -->
