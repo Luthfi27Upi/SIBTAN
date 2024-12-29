@@ -171,10 +171,6 @@
                   <div class="card-content">
                     <p><?= $card['label'] ?></p>
                     <button class="btn btn-warning">Menunggu Verifikasi</button>
-                    <footer class="blockquote-footer pt-4 mt-4 border-top">
-                        Seseorang terkenal dalam
-                        <cite title="Judul Sumber">Judul Sumber</cite>
-                    </footer>
                   </div>
                   <div class="card-hover">
                     <p><?= $card['label'] ?></p>

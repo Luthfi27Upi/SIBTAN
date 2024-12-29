@@ -85,15 +85,10 @@ class AuthController {
                     'nim' => $user['NIM'],
                     'username' => $user['USERNAME'],
                     'role' => $user['ID_ROLE'],
-                    //'id' => $user['ID'],
-                    //'image' => $user['image'],
                     'email' => $user['EMAIL'],
                     'no_hp' => $user['NO_HP'],
                     'alamat' => $user['ALAMAT'],
                     'jenis_kelamin' => $user['JENIS_KELAMIN'],
-                    //'tempat_lahir' => $user['tempat_lahir'],
-                    //'tanggal_lahir' => $user['tanggal_lahir'],
-                    //'jurusan' => $jurusan,
                 ];
          
                 echo json_encode([
