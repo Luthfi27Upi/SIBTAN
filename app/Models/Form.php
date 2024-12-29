@@ -132,6 +132,26 @@ class Form {
         return $forms;
     }
 
+    public function getBerkasAdmin($id_role) {
+        
+        $sql = "
+            SELECT * FROM [BERKAS] WHERE TINGKAT = ?
+        ";
+        
+        $params = [$id_role];
+        $stmt = sqlsrv_query($this->db, $sql, $params);
+    
+        if ($stmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+    
+        $forms = [];
+        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+            $forms[] = $row;
+        }
+        return $forms;
+    }
+
     public function getStatus($nim, $id) {
         
         $sql = "SELECT ID_STATUS FROM [BEBAS_TANGGUNGAN] WHERE NIM = ? AND ID_BERKAS = ?";

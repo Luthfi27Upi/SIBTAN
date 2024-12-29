@@ -9,12 +9,11 @@ class CetakController
     }
 
     public function renderCards() {
-        // Validasi user
-        if (!isset($_SESSION['user']['id'])) {
+        if (!isset($_SESSION['user']['nim'])) {
             throw new Exception('User tidak ditemukan: Session tidak diatur dengan benar');
         }
 
-        $userId = (int) $_SESSION['user']['id'];
+        $userId = (int) $_SESSION['user']['nim'];
 
         if (!$userId) {
             throw new Exception('User tidak ditemukan: id tidak valid');
@@ -29,10 +28,9 @@ class CetakController
         }
 
         $mahasiswa = [
-            'id' => htmlspecialchars($dataMahasiswa['ID_MHS']),
             'username' => htmlspecialchars($dataMahasiswa['USERNAME']),
             'nim' => htmlspecialchars($dataMahasiswa['NIM']),
-            'jurusan' => htmlspecialchars($dataMahasiswa['JURUSAN']),
+            'prodi' => htmlspecialchars($dataMahasiswa['PRODI']),
             'email' => htmlspecialchars($dataMahasiswa['EMAIL'])
         ];
 
