@@ -20,9 +20,6 @@
 
         <!-- Content -->
         <div class="content flex-grow-1">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <a href="/users/create" class="btn btn-primary">Create New User</a>
-            </div>
 
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -54,8 +51,15 @@
                                                 <div class="progress-bar bg-danger" role="progressbar" style="width: <?php echo $user['progress_bar']['status_3']; ?>%" aria-valuenow="<?php echo $user['progress_bar']['status_3']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </td>
-                                        <td><div class="cell-content"><?php echo htmlspecialchars($user['ID_PRODI']); ?></div></td>
+                                        <td><div class="cell-content"><?php echo htmlspecialchars($user['PRODI']); ?></div></td>
                                         <td>
+                                            <?php if ($user['progress_bar']['status_2'] != 0) { ?>
+                                                <div class="cell-content">Menunggu Verifikasi</div>
+                                                <?php } elseif ($user['progress_bar']['status_4'] == 100) { ?>
+                                                <div class="cell-content">Lengkap</div>
+                                                <?php } elseif ($user['progress_bar']['status_2'] == 0) { ?>
+                                                <div class="cell-content">Belum Ada Unggahan</div>
+                                            <?php } ?>
                                         </td>
                                         <td>
                                             <div class="cell-content">

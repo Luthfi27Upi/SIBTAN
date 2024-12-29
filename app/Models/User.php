@@ -122,7 +122,12 @@ class User {
     // mengambil semua data user
     public function getAll() {
         
-        $sql = "SELECT * FROM [USER]";
+        $sql = "
+        SELECT [USER].*, PROGRAM_STUDI.PRODI
+        FROM [USER]
+        LEFT JOIN PROGRAM_STUDI
+        ON [USER].ID_PRODI = PROGRAM_STUDI.ID_PRODI;
+        ";
         
         $stmt = sqlsrv_query($this->db, $sql);
     

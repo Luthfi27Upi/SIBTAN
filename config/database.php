@@ -4,14 +4,11 @@ class Database {
     private $connection;
     
     private function __construct() {
-      
 
-
-
-        $serverName = "MSI\SQLEXPRESS";
+        $serverName = "LAPTOP-69O5OEH3\SQLEXPRESS";
 
         $connectionOptions = [
-            "Database" => "SIBTAN-REWORK",
+            "Database" => "SIBTAN_REWORK",
             
             "Uid" => "sa",
             "PWD" => "12345",

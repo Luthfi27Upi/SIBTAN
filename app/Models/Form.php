@@ -65,9 +65,9 @@ class Form {
         return $result ? $result['FILE_PATH'] : null;
     }
     
-    public function updateStatus($userId, $file_name, $newStatus) {
-        $sql = "UPDATE FILES SET status = ? WHERE id = ? AND file_name = ?";
-        $params = [$newStatus, $userId, $file_name];
+    public function updateStatus($userId, $id_berkas, $newStatus) {
+        $sql = "UPDATE BEBAS_TANGGUNGAN SET id_status = ? WHERE nim = ? AND id_berkas = ?";
+        $params = [$newStatus, $userId, $id_berkas];
         
         $stmt = sqlsrv_query($this->db, $sql, $params);
         
@@ -77,9 +77,9 @@ class Form {
     
         return true; 
     }
-    public function verificationPending($id) {
-        $sql = "SELECT * FROM FILES WHERE status = 'Menunggu Verifikasi' AND id = ?";
-        $params = [$id];
+    public function verificationPending($nim) {
+        $sql = "SELECT * FROM BEBAS_TANGGUNGAN WHERE nim = ?";
+        $params = [$nim];
         $stmt = sqlsrv_query($this->db, $sql, $params);
 
         if ($stmt === false) {
