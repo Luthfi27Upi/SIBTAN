@@ -75,11 +75,6 @@ class AuthController {
 
             if ($inputOTP === $tempAuth['otp']) {
                 $user = $tempAuth['user'];
-                //$jurusan = $this->auth->getJurusan($user['ID']);
-         
-                /*if ($jurusan === null) {
-                    error_log("Jurusan tidak ditemukan untuk ID: " . $user['ID']);
-                }*/
          
                 $_SESSION['user'] = [
                     'nim' => $user['NIM'],

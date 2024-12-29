@@ -1,0 +1,24 @@
+.content .card {
+  background-color: #CCE5FF;
+  border-radius: 15px;
+  padding: 80px;
+  margin-top: 40px;
+  margin-left: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #043873;
+  max-width: 1050px;
+  text-align: left;
+}
+
+.content .card h1 {
+  font-weight: bold;
+  text-align: center;
+  color: #043873;
+  margin-bottom: 20px;
+}
+
+.content .card ol {
+  padding-left: 20px;
+  color: #043873;
+  font-size: 1.5rem;
+}
