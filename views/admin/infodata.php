@@ -70,9 +70,9 @@
     <?php include 'sidebar.php'; ?>
 
     <div class="content">
-      <header>
+    <header>
         <img src="../img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
-        <div class="user">Lutfi Triaswangga</div>
+        <div class="user"><?php echo $_SESSION['user']['username'] ?></div>
       </header>
       <main>
         <div class="title-with-icon">
