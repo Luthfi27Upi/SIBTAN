@@ -147,6 +147,7 @@ switch ($path) {
     case '/users/files/'.$id:
         $controller = new FormController($formModel);
         $controller->renderAdminVerification($id);
+        break;
 
     case '/users/actionupload':
         $controller = new FormController($formModel);
@@ -176,6 +177,5 @@ switch ($path) {
     case '/cetak';
         $controller = new CetakController($cetakModel);
         $mahasiswa=$controller->renderCards(); 
-        
         break;
 }        
