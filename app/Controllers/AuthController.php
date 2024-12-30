@@ -10,6 +10,11 @@ class AuthController {
         include "views/auth/login.php";
     }
 
+    public function logout() {
+        session_destroy();
+        header("Location: /login");
+    }
+
     public function otp() {
         include "views/auth/otp.php";
     }

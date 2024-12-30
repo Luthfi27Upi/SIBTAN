@@ -48,8 +48,9 @@ switch ($path) {
     case '/auth/otp':
         $controller = new AuthController($authModel);
         echo $controller->otp();
+        break;
         
-    case '/logout':
+    case '/users/logout':
         $controller = new AuthController($authModel);
         $controller->logout();
         break;

@@ -17,7 +17,7 @@
     <?php include 'sidebar.php'; ?>
 
     <!-- Main Content -->
-    <div class="content flex-grow-1 d-flex flex-column justify-content-center">
+    <div class="content flex-grow-1">
       <header class="text-center">
         Sistem Informasi Bebas Tanggungan
       </header>

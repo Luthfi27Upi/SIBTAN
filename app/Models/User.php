@@ -38,7 +38,7 @@ class User {
 
     
     public function find($id) {
-        $sql = "SELECT * FROM [USER] WHERE id = ?";
+        $sql = "SELECT * FROM [USER] WHERE nim = ?";
         $params = [$id];
         $stmt = sqlsrv_query($this->db, $sql, $params);
         return sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
