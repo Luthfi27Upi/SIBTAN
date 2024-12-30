@@ -1,0 +1,71 @@
+/* Header */
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #cce5ff;
+  border-radius: 30px;
+}
+
+header .user {
+  font-weight: bold;
+  color: #2b74c4;
+  margin-left: 10px;
+}
+
+.content {
+  padding: 20px;
+}
+
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.page-title {
+  color: #2b74c4;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.cointainer img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.cointainer {
+  margin-top: 20px;
+}
+
+.info-section {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.info-section h4 {
+  color: #2b74c4;
+  margin-bottom: 10px;
+}
+
+.info-section p {
+  color: #043873;
+  font-size: 14px;
+}
+
+.messages-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.message-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}

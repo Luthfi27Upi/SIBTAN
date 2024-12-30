@@ -96,7 +96,7 @@
               </div>
               <div class="col-md-6">
                 <label for="ttl" class="form-label">Tempat, Tanggal Lahir:</label>
-                <input type="text" class="form-control" id="ttl" name="ttl" value="<?= htmlspecialchars($user['tempat_lahir']).',  '.$user['tanggal_lahir'] instanceof DateTime ? htmlspecialchars($user['tanggal_lahir']->format('Y-m-d')) : htmlspecialchars($user['tanggal_lahir']); ?>" disabled>
+                <input type="text" class="form-control" id="ttl" name="ttl" value="" disabled>
               </div>
             </div>
             <div class="row mb-3">

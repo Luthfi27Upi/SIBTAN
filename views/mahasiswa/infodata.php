@@ -24,9 +24,7 @@
       margin-left: 10px;
     }
 
-
     .content {
-      margin-left: 220px;
       padding: 20px;
     }
 

@@ -61,7 +61,7 @@
             <h2 style="text-align:center;">BEBAS TANGGUNGAN JURUSAN</h2>
             <p>Nama: <?php echo htmlspecialchars($mahasiswa['username'] ?? 'Tidak Ditemukan'); ?></p>
             <p>NIM: <?php echo htmlspecialchars($mahasiswa['nim'] ?? 'Tidak Ditemukan'); ?></p>
-            <p>Program Studi: <?php echo htmlspecialchars($mahasiswa['jurusan'] ?? 'Tidak Ditemukan'); ?></p>
+            <p>Program Studi: <?php echo htmlspecialchars($mahasiswa['prodi'] ?? 'Tidak Ditemukan'); ?></p>
         </div>
 
         <div class="section">
