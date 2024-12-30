@@ -48,8 +48,9 @@ switch ($path) {
     case '/auth/otp':
         $controller = new AuthController($authModel);
         echo $controller->otp();
+        break;
         
-    case '/logout':
+    case '/users/logout':
         $controller = new AuthController($authModel);
         $controller->logout();
         break;
@@ -146,6 +147,7 @@ switch ($path) {
     case '/users/files/'.$id:
         $controller = new FormController($formModel);
         $controller->renderAdminVerification($id);
+        break;
 
     case '/users/actionupload':
         $controller = new FormController($formModel);
@@ -175,6 +177,5 @@ switch ($path) {
     case '/cetak';
         $controller = new CetakController($cetakModel);
         $mahasiswa=$controller->renderCards(); 
-        
         break;
 }        

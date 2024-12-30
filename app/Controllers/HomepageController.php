@@ -23,11 +23,7 @@ class HomepageController
     }
 
     public function profile() {
-        if ($_SESSION['user']['role'] == '1') {
-            require 'views/mahasiswa/profile.php';
-        } else {
-            require 'views/admin/profile.php';
-        }
+        require 'views/mahasiswa/profile.php';
     }
     
     public function tatacara() {
@@ -47,7 +43,11 @@ class HomepageController
     }
 
     public function callcenter() {
-        require 'views/mahasiswa/callcenter.php';
+        if ($_SESSION['user']['role'] == '1') {
+            require 'views/mahasiswa/callcenter.php';
+        } else {
+            require 'views/admin/callcenter.php';
+        }
     }
 }
 ?>

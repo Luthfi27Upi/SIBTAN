@@ -14,7 +14,6 @@
 
     /* Content Styling */
     .content {
-      margin-left: 200px;
       flex-grow: 1;
       
     }

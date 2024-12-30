@@ -1,0 +1,53 @@
+.sidebar {
+  background: linear-gradient(
+    to bottom,
+    rgba(14, 64, 136, 1) 2%,
+    rgba(14, 64, 136, 0.74) 100%
+  );
+
+  color: white;
+  min-width: 200px;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding-top: 0.1px;
+  position: sticky;
+}
+
+.sidebar .nav-link {
+  color: white;
+  font-weight: 500;
+  padding: 10px 20px;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  background-color: #ffe492;
+  color: white;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.sidebar .logo {
+  width: 80px;
+  margin-top: -20px;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 10px 0;
+  color: white;
+}
+
+.sidebar .nav-item {
+  margin-bottom: 15px;
+}
+
+h5 {
+  margin-top: -20px;
+}

@@ -7,73 +7,17 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <style>
-    /* Sidebar styling */
-    h5{
-      margin-top: -20px; /* mengatur jarak logo dan sibtan */
-    }
-
-    header {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #CCE5FF;
-      
-    }
-
-    header .user {
-      font-weight: bold;
-      color: #2b74c4;
-    }
-
-    /* Content  */
-    .content {
-      margin-left: 200px;
-      flex-grow: 1;
-    }
-
-    .title-with-icon {
-      display: flex;
-      align-items: center;
-      gap: 10px; /* Jarak antara gambar dan teks */
-      margin-top: 20px;
-      margin-left: 80px;
-    }
-
-    .page-title {
-      color: #2B74C4;
-      font-weight: bold;
-      font-size: 26px;
-    }
-
-    .info {
-      background: #F5F5F5;
-      padding: 20px 30px;
-      border-radius: 10px;
-      margin-top: 20px;
-      margin-left: 80px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      color: #043873;
-      max-width: 1050px;
-    }
-
-    .info li {
-      margin-bottom: 10px;
-    }
-
-  </style>
+  <link rel="stylesheet" href="/resources/css/admin/infodata.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
   <div class="d-flex flex-grow-1">
     <!-- Sidebar -->
     <?php include 'sidebar.php'; ?>
 
-    <div class="content">
-    <header>
-        <img src="../img/logouser.jpg" alt="User Avatar" style="width: 25px; height: 25px;  border-radius: 50%;margin-right: 10px;">
-        <div class="user"><?php echo $_SESSION['user']['username'] ?></div>
-      </header>
+    <!-- Content -->
+    <div class="content flex-grow-1">
+
+      <?php include 'header.php'; ?>
       <main>
         <div class="title-with-icon">
           <img src="../img/logoinfodata.jpg" alt="Info Icon" style="width: 40px; height: 40px;  border-radius: 50%;margin-right: 10px;">
